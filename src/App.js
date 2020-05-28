@@ -1,26 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react'
+import './App.css'
+import Welcome from './components/Welcome'
+import Rules from './components/Rules'
+import Cases from './components/Cases'
+import Montana from './components/Montana'
+import Neighborhood from './components/Neighborhood'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  constructor(props) {
+    super(props)
+
+    this.pageHandler = this.pageHandler.bind(this)
+
+    this.state = {
+      page: "welcome" //should be initialized to "welcome"
+    }
+  }
+
+  pageHandler(newPage) {
+    this.setState({
+      page: newPage
+    })
+  }
+
+  render() {
+    var page
+    switch(this.state.page) {
+      case "welcome":
+        page = <Welcome action={this.pageHandler} />
+        break
+      case "rules":
+        page = <Rules action={this.pageHandler} />
+        break
+      case "cases":
+        page = <Cases action={this.pageHandler} />
+        break
+      case "montana-case":
+        page = <Montana action={this.pageHandler} />
+        break
+      case "neighborhood-case":
+        page = <Neighborhood action={this.pageHandler} />
+        break
+      default:
+        break
+    }
+    console.log(this.state.page)
+    return <div className="App">{page}</div>
+  }
 }
 
 export default App;
