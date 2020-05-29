@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Intro from './Intro'
 import FactSheet from './FactSheet'
 import VoterMaterials from './VoterMaterials'
+import PreSolution from './PreSolution'
 import Solution from './Solution'
 
 class Scenario extends Component {
@@ -36,8 +37,14 @@ class Scenario extends Component {
                   action={this.pageHandler}
                 />
         break
+      case "pre-solution":
+        page = <PreSolution action={this.pageHandler} />
+        break
       case "solution":
-        page = <Solution action={this.pageHandler} />
+        page = <Solution
+                  text={this.props.solution}
+                  action={this.pageHandler}
+                />
         break
       case "cases":
         this.props.action("cases")

@@ -53,6 +53,27 @@ class Neighborhood extends Component {
 
     var voterMaterials =
       <div className="main-text">
+        <ul>
+          <li>
+            Description of Mountain View from the local government website
+          </li>
+          <li>
+            Discusses most important issues in election, like methods to
+            preserve affordable housing
+          </li>
+          <li>
+            Discusses candidate stances on rent control versus other forms of
+            providing affordable housing
+          </li>
+          <li>About section from Pat Showalter’s campaign website</li>
+          <li>Mountain View City Map</li>
+          <li>NEC priorities list from their website</li>
+          <li>Flier distributed by the NEC advocating for Pat Showalter</li>
+        </ul>
+      </div>
+
+    var solution =
+      <div className="main-text">
 
       </div>
 
@@ -62,6 +83,7 @@ class Neighborhood extends Component {
           intro={intro}
           factSheet={factSheet}
           voterMaterials={voterMaterials}
+          solution={solution}
           action={this.props.action}
         />
       </div>

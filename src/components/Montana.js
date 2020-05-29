@@ -62,7 +62,52 @@ class Montana extends Component {
 
     var voterMaterials =
       <div className="main-text">
+        <ul>
+          <li>
+            Article providing background on Ed Sheehy when he ran for the seat
+          </li>
+          <li>
+            Flier paid for by the Montana Growth Network which supports Laurie
+            McKinnon
+          </li>
+          <li>
+            Two fliers paid for by the Montana Growth Network which advocate
+            against Ed Sheehy
+          </li>
+          <li>
+            Article discussing radio attack ad on Ed Sheehy funded by the
+            Montana Growth Network
+          </li>
+          <li>
+            Montana Growth Network website
+          </li>
+          <li>
+            Map of the remote Ruby River and the bridges crossing or providing
+            access to it
+          </li>
+          <li>
+            Guide to the Ruby River, including physical description, access
+            points, and challenges to recreation on the river
+          </li>
+          <li>
+            Active case disputing landowners rights to create barriers limiting
+            access to the Ruby River where it crosses into private property
+          </li>
+          <li>
+            Vocabulary list with definitions of legal terms used in the active
+            Supreme Court case
+          </li>
+        </ul>
+        <p>
+          After reading all the available materials, if you want a hint read
+          this additional material. Please note that the Hint material would
+          not have been available to voters prior to the election.
+        </p>
+      </div>
 
+    var solution =
+      <div className="main-text">
+        
       </div>
 
     return (
@@ -71,6 +116,7 @@ class Montana extends Component {
           intro={intro}
           factSheet={factSheet}
           voterMaterials={voterMaterials}
+          solution={solution}
           action={this.props.action}
         />
       </div>
