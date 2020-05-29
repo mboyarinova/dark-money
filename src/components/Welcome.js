@@ -6,24 +6,22 @@ class Welcome extends Component {
 
   render() {
     return (
-      <div className="welcome-page">
+      <div className="page" id="welcome">
         <h1 className="page-title">Welcome to "Dark Money: The Game"!</h1>
-        <p className="side-paragraph" style={{fontSize: "20px"}}>
+        <p className="side-paragraph">
           The purpose of this game is to show voters in the United States the
           way that special interests can become involved in local elections,
           and how our current campaign finance system works.
         </p>
         <button
-          className="button"
           onClick={() => this.props.action("rules")}
           style={{top: "40%", right: "20%"}}
         >
           Game Rules
         </button>
         <button
-          className="button"
           onClick={() => this.props.action("cases")}
-          style={{top: "60%", right: "20%"}}
+          style={{top: "63%", right: "20%"}}
         >
           Play
         </button>

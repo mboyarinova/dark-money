@@ -3,19 +3,28 @@ import React, {Component} from 'react'
 class PreSolution extends Component {
   render() {
     return (
-      <div>
-        <h2>Where do you think the funding is coming from?</h2>
+      <div className="page" id="pre-solution">
+        <h2 className="middle-title">
+          Where do you think the funding is coming from?
+        </h2>
         <button
-          className="button"
+          className="mid-button"
           onClick={() => this.props.action("voter-materials")}
-          style={{top: "40%", left: "30%"}}
+          style={{top: "48%"}}
         >
           Review Materials Again
         </button>
         <button
-          className="button"
+          className="mid-button"
+          onClick={() => this.props.action("options")}
+          style={{top: "60%"}}
+        >
+          See Options
+        </button>
+        <button
+          className="mid-button"
           onClick={() => this.props.action("solution")}
-          style={{top: "40%", right: "30%"}}
+          style={{top: "72%"}}
         >
           Read Solution
         </button>

@@ -78,7 +78,7 @@ class Neighborhood extends Component {
       </div>
 
     return (
-      <div className="neighborhood">
+      <React.Fragment>
         <Scenario
           intro={intro}
           factSheet={factSheet}
@@ -86,7 +86,7 @@ class Neighborhood extends Component {
           solution={solution}
           action={this.props.action}
         />
-      </div>
+      </React.Fragment>
     )
   }
 }

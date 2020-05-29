@@ -1,109 +1,156 @@
+.page {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
 .page-title {
   margin-top: 5%;
 }
 
 .side-paragraph {
+  font-size: 20px;
   left: 20%;
   position: absolute;
   text-align: left;
-  top: 43%;
-  width: 40%
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 30%;
 }
 
-.button {
+button {
   font-size: 18px;
-  height: 8%;
+  min-height: 8%;
   position: absolute;
-  width: 12%
+  width: 12%;
 }
 
-.button:hover {
+button:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.rules-container {
+  height: 65%;
+  left: 20%;
+  position: absolute;
+  width: 60%;
 }
 
 .rule-text {
-  left: 30%;
-  position: absolute;
-  top: 25%;
-  width: 40%;
+  left: 50%;
+  position: relative;
   text-align: left;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  width: 70%;
 }
 
-.main-text {
-  left: 25%;
+.prev:hover, .next:hover {
+  background-color: rgb(211,211,211);
+  background-color: rgba(211,211,211,0.8);
+}
+
+.prev, .next {
+  border-radius: 3px 3px 3px 3px;
+  color: grey;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: -22px;
+  padding: 16px;
   position: absolute;
-  top: 25%;
-  width: 50%;
-  text-align: left
+  top: 50%;
+  transition: 0.6s ease;
+  user-select: none;
+  width: max-content;
 }
 
-.arrow-button {
-  background-color: white;
-  border: none;
-  height: 12%;
-  position: absolute;
+.next {
+  right: 5%;
+  transform: translate(50%, 0);
 }
 
-.arrow-button:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-  /* crop the image so that it's circular*/
-}
-
-.arrow-img {
-  height: 100%;
-  width: 100%
+.prev {
+  left: 5%;
+  transform: translate(-50%, 0);
 }
 
 .carousel-dots {
+  left: 50%;
   position: absolute;
-  left: 48%
+  transform: translate(-50%, 0);
 }
 
 .dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 5px;
   background-color: #bbb;
   border-radius: 50%;
+  cursor: pointer;
   display: inline-block;
+  height: 15px;
+  margin: 0 5px;
   transition: background-color 0.6s ease;
+  width: 15px;
 }
 
 .active, .dot:hover {
   background-color: #717171;
 }
 
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.main-body {
+  height: 70%;
+  left: 50%;
+  position: absolute;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  width: 80%;
 }
 
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
+.main-text {
+  left: 50%;
+  position: relative;
+  text-align: left;
   top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: grey;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  user-select: none;
-  border-radius: 3px 3px 3px 3px;
+  transform: translate(-50%, -50%);
+  width: 70%;
 }
 
-.next {
-  right: 20%;
+li {
+  margin: 15px 0;
 }
 
-.prev {
-  left: 20%;
-}
-
-.float-text {
+.middle-title {
   position: absolute;
-  top: 57%;
-  font-size: 20px;
-  background-color: grey
+  top: 30%;
+  width: 100%
+}
+
+.mid-button {
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.solution-body {
+  height: max-content;
+  left: 50%;
+  position: absolute;
+  top: 16%;
+  transform: translate(-50%, 0);
+  width: 90%;
+}
+
+.solution-text {
+  left: 50%;
+  position: relative;
+  text-align: left;
+  transform: translate(-50%, 0);
+  width: 100%;
+}
+
+.solution-title {
+  margin-top: 0;
+}
+
+p {
+  margin: 10px 0;
 }

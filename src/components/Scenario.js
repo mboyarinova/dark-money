@@ -4,6 +4,7 @@ import Intro from './Intro'
 import FactSheet from './FactSheet'
 import VoterMaterials from './VoterMaterials'
 import PreSolution from './PreSolution'
+import Options from './Options'
 import Solution from './Solution'
 
 class Scenario extends Component {
@@ -40,6 +41,9 @@ class Scenario extends Component {
       case "pre-solution":
         page = <PreSolution action={this.pageHandler} />
         break
+      case "options":
+        page = <Options action={this.pageHandler} />
+        break
       case "solution":
         page = <Solution
                   text={this.props.solution}
@@ -53,9 +57,7 @@ class Scenario extends Component {
         break
     }
 
-    return (
-      <div>{page}</div>
-    )
+    return <React.Fragment>{page}</React.Fragment>
   }
 }
 

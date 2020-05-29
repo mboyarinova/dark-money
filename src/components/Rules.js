@@ -31,9 +31,8 @@ class Rules extends Component {
       <a className="prev" onClick={() => this.plusSlides(-1)}>&#10094;</a>
     var nextButton =
       <a className="next" onClick={() => this.plusSlides(1)}>&#10095;</a>
-    var index = this.state.slideIndex
 
-    switch(index) {
+    switch(this.state.slideIndex) {
       case 1:
         ruleText =
           <div className="rule-text">
@@ -108,7 +107,6 @@ class Rules extends Component {
         nextButton = null
         playButton =
           <button
-            className="button"
             onClick={() => this.props.action("cases")}
             style={{top: "83%", right: "15%"}}
           >
@@ -120,15 +118,14 @@ class Rules extends Component {
     }
 
     return (
-      <div className="rules-page">
-        <h1 className="page-title">Game Background and Rules</h1>
+      <div className="page" id="rules">
+        <h1 className="page-title">Background and Rules</h1>
         <div className="rules-container">
-          <div className="rule-slide">{ruleText}</div>
+          {ruleText}
           {prevButton}
           {nextButton}
         </div>
         <button
-          className="button"
           onClick={() => this.props.action("welcome")}
           style={{top: "83%", left: "15%"}}
         >
