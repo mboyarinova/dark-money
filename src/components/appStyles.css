@@ -20,6 +20,7 @@
 }
 
 button {
+  cursor: pointer;
   font-size: 18px;
   min-height: 8%;
   position: absolute;
