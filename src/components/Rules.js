@@ -7,17 +7,28 @@ class Rules extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      slideIndex: 1
+      slideIndex: 0
     }
   }
 
-  plusSlides = index => {
+  handleDots = index => {
+    var dots = document.getElementsByClassName("dot")
+    for (var i = 0; i < 3; i++) {
+      dots[i].className = dots[i].className.replace(" active", "")
+    }
+    dots[index].className += " active"
+  }
+
+  plusSlides = i => {
     this.setState(prevState => {
-      return {slideIndex: prevState.slideIndex + index}
+      var index = prevState.slideIndex + i
+      this.handleDots(index)
+      return {slideIndex: index}
     })
   }
 
   currentSlide = index => {
+    this.handleDots(index)
     this.setState({
       slideIndex: index
     })
@@ -33,9 +44,9 @@ class Rules extends Component {
       <a className="next" onClick={() => this.plusSlides(1)}>&#10095;</a>
 
     switch(this.state.slideIndex) {
-      case 1:
+      case 0:
         ruleText =
-          <div className="rule-text">
+          <div className="slide-text">
             <p>
               The landmark Supreme Court decision Citizens United v. FEC
               ruled that corporate spending on political messaging (ex.
@@ -57,9 +68,9 @@ class Rules extends Component {
           </div>
         prevButton = null
         break
-      case 2:
+      case 1:
         ruleText =
-          <div className="rule-text">
+          <div className="slide-text">
             <p>
               You will be given two real life scenarios of organizations
               spending money to advocate for a candidate in a state or local
@@ -72,9 +83,9 @@ class Rules extends Component {
             </p>
           </div>
         break
-      case 3:
+      case 2:
         ruleText =
-          <div className="rule-text">
+          <div className="slide-text">
             <h3>How to approach a case:</h3>
             <ol>
               <li>
@@ -108,7 +119,7 @@ class Rules extends Component {
         playButton =
           <button
             onClick={() => this.props.action("cases")}
-            style={{top: "83%", right: "15%"}}
+            style={{top: "88%", right: "15%"}}
           >
             Play
           </button>
@@ -120,23 +131,22 @@ class Rules extends Component {
     return (
       <div className="page" id="rules">
         <h1 className="page-title">Background and Rules</h1>
-        <div className="rules-container">
+        <div className="slide-container">
           {ruleText}
           {prevButton}
           {nextButton}
         </div>
         <button
           onClick={() => this.props.action("welcome")}
-          style={{top: "83%", left: "15%"}}
+          style={{top: "88%", left: "15%"}}
         >
           Main Page
         </button>
         {playButton}
-        <div class="carousel-dots" style={{top: "85%"}}>
-          <span class="dot" id="dot1" onClick={() => this.currentSlide(1)}></span>
-          <span class="dot" id="dot2" onClick={() => this.currentSlide(2)}></span>
-          <span class="dot" id="dot3" onClick={() => this.currentSlide(3)}></span>
-          {/*work on making dots active depending on slideIndex*/}
+        <div class="carousel-dots">
+          <span class="dot active" onClick={() => this.currentSlide(0)}></span>
+          <span class="dot" onClick={() => this.currentSlide(1)}></span>
+          <span class="dot" onClick={() => this.currentSlide(2)}></span>
         </div>
       </div>
     )

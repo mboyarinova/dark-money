@@ -73,9 +73,51 @@ class Neighborhood extends Component {
       </div>
 
     var solution =
-      <div className="main-text">
-
-      </div>
+      [
+        <div className="slide-text">
+          <strong>Who is the Neighborhood Empowerment Coalition?</strong>
+          <p>
+            The NEC is funded by the California Apartment Association, the
+            California branch of the largest property owners association in the
+            country. They represent the interest of the rental housing
+            industry.
+          </p>
+          <strong>Role in the election</strong>
+          <p>
+            The NEC spent $83,000 in the City Council election to support 3
+            candidates out of the 9 running for 3 seats. All 3 candidates
+            opposed rent control, which was a popular solution to the city’s
+            housing cost crisis. The California Apartment Association opposed
+            rent controls on behalf of the property owners in Mountain View,
+            where 58% of the population are renters.
+          </p>
+        </div>,
+        <div className="slide-text">
+          <strong>Result</strong>
+          <p>
+            2 out of 3 of the candidates backed by NEC funding won seats on the
+            City Council, including Pat Showalter. Rent control was not an
+            issue discussed by the Council until years later when a ballot
+            measure passed demanding action on the issue.
+          </p>
+          <p>
+            It is important to note that none of the candidates coordinated
+            with the NEC or knew about the CAA involvement.
+          </p>
+          <strong>Is this legal?</strong>
+          <p>
+            Yes. The Neighborhood Empowerment Coalition is a Political Action
+            Committee and the California Apartment Association is obliged to
+            report contributions to the California Fair Political Practice
+            Commission. The election took place on November 4th, and
+            contributions made after October 18th didn’t have to be reported
+            until the following February. CAA made virtually all of their
+            contributions in the days after the deadline, ensuring voters
+            wouldn’t be able to trace the spending until long after ballots had
+            been cast.
+          </p>
+        </div>
+      ]
 
     return (
       <React.Fragment>

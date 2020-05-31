@@ -24,6 +24,7 @@ button {
   font-size: 18px;
   min-height: 8%;
   position: absolute;
+  transition: 0.6s ease;
   width: 12%;
 }
 
@@ -31,18 +32,18 @@ button:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-.rules-container {
+.slide-container {
   height: 65%;
   left: 20%;
   position: absolute;
   width: 60%;
 }
 
-.rule-text {
+.slide-text {
   left: 50%;
   position: relative;
   text-align: left;
-  top: 45%;
+  top: 48%;
   transform: translate(-50%, -50%);
   width: 70%;
 }
@@ -80,6 +81,7 @@ button:hover {
 .carousel-dots {
   left: 50%;
   position: absolute;
+  top: 88%;
   transform: translate(-50%, 0);
 }
 
@@ -90,7 +92,7 @@ button:hover {
   display: inline-block;
   height: 15px;
   margin: 0 5px;
-  transition: background-color 0.6s ease;
+  transition: 0.6s ease;
   width: 15px;
 }
 
@@ -120,36 +122,9 @@ li {
   margin: 15px 0;
 }
 
-.middle-title {
-  position: absolute;
-  top: 30%;
-  width: 100%
-}
-
-.mid-button {
+.stack-button {
   left: 50%;
   transform: translate(-50%, 0);
-}
-
-.solution-body {
-  height: max-content;
-  left: 50%;
-  position: absolute;
-  top: 16%;
-  transform: translate(-50%, 0);
-  width: 90%;
-}
-
-.solution-text {
-  left: 50%;
-  position: relative;
-  text-align: left;
-  transform: translate(-50%, 0);
-  width: 100%;
-}
-
-.solution-title {
-  margin-top: 0;
 }
 
 p {

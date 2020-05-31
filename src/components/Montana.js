@@ -106,46 +106,53 @@ class Montana extends Component {
       </div>
 
     var solution =
-      <div className="solution-text">
-        <strong>Who is the Neighborhood Empowerment Coalition?</strong>
-        <p>
-          The NEC is funded by the California Apartment Association, the
-          California branch of the largest property owners association in the
-          country. They represent the interest of the rental housing industry.
-        </p>
-        <strong>Role in the election</strong>
-        <p>
-          The NEC spent $83,000 in the City Council election to support 3
-          candidates out of the 9 running for 3 seats. All 3 candidates opposed
-          rent control, which was a popular solution to the city’s housing cost
-          crisis. The California Apartment Association opposed rent controls on
-          behalf of the property owners in Mountain View, where 58% of the
-          population are renters.
-        </p>
-        <strong>Result</strong>
-        <p>
-          2 out of 3 of the candidates backed by NEC funding won seats on the
-          City Council, including Pat Showalter. Rent control was not an issue
-          discussed by the Council until years later when a ballot measure
-          passed demanding action on the issue.
-        </p>
-        <p>
-          It is important to note that none of the candidates coordinated with
-          the NEC or knew about the CAA involvement.
-        </p>
-        <strong>Is this legal?</strong>
-        <p>
-          Yes. The Neighborhood Empowerment Coalition is a Political Action
-          Committee and the California Apartment Association is obliged to
-          report contributions to the California Fair Political Practice
-          Commission. The election took place on November 4th, and
-          contributions made after October 18th didn’t have to be reported
-          until the following February. CAA made virtually all of their
-          contributions in the days after the deadline, ensuring voters
-          wouldn’t be able to trace the spending until long after ballots had
-          been cast.
-        </p>
-      </div>
+      [
+        <div className="slide-text">
+          <strong>Who is Montana Growth Network?</strong>
+          <p>
+            The Montana Growth Network was funded by Charles Schwab (net worth
+            $4.2 billion) and James Cox Kennedy (net worth 10.2 billion), two
+            estate owners in Montana. They have both been involved in a series
+            of drawn out court cases to limit the public’s access to waterways
+            on their land, including the Ruby River.
+          </p>
+          <strong>Why did they pour money into the election?</strong>
+          <p>
+            Schwab and Kennedy were hoping that a conservative justice on the
+            Montana Supreme Court would rule to revoke the Stream Access Law
+            and limit the public’s access to waterways on their property.
+          </p>
+          <strong>What happened next?</strong>
+          <p>
+            McKinnon beat Sheehy in the election. When the active court case
+            involving Kennedy came to the Supreme Court in 2016, McKinnon was
+            one of two judges to vote in favor of Kennedy. Kennedy lost the
+            court case and Montanians’ access to waterways was reaffirmed.
+          </p>
+        </div>,
+        <div className="slide-text">
+          <strong>Is this legal?</strong>
+          <p>
+            Yes. 501(c)(4) organizations are under no obligation to disclose
+            their donors, and most of them do not. These organizations can
+            accept unlimited contributions and spend unlimited amounts in both
+            state and federal elections, and the public will never know where
+            that money comes from. Frequently, organizations like the Montana
+            Growth Network do not advocate for their key issues (like public
+            access to waterways) but instead focus on controversial or divisive
+            issues (like the death penalty) which sway voters without revealing
+            their true intentions.
+          </p>
+          <p>
+            This information is only available because the Montana Growth
+            Network separately broke the law by misrepresenting campaign
+            contributions to state senators, and so was ordered by a judge to
+            disclose their donors. The truth is that this happens all the time
+            in state and local elections, and usually the public never finds
+            out the true donors and motivations.
+          </p>
+        </div>
+      ]
 
     return (
       <React.Fragment>
