@@ -2,6 +2,18 @@ import React, { Component } from 'react'
 import Scenario from './Scenario'
 
 class Montana extends Component {
+
+  popUpHandler = index => {
+    // var popup = document.getElementById("myPopup");
+    // popup.classList.toggle("show");
+  }
+
+  handleResponse = (firstId, secondId, thirdId) => {
+    document.getElementById(secondId).style.visibility = "hidden"
+    document.getElementById(thirdId).style.visibility = "hidden"
+    document.getElementById(firstId).style.visibility = "visible"
+  }
+
   render() {
 
     var intro =
@@ -37,17 +49,17 @@ class Montana extends Component {
     var factSheet =
       <div className="main-text">
         <ul>
-          <li>
+          <li className="fact-item">
             The Montana Growth Network claims to advocate for policies which
             make the state more business-friendly.
           </li>
-          <li>
+          <li className="fact-item">
             Montana’s state Constitution included a Stream Access Law which
             guarantees the right of all citizens to use the waterways in the
             state for recreational purposes even if they run through private
             land.
           </li>
-          <li>
+          <li className="fact-item">
             In 1912 Montana passed the Corrupt Practices Act which prohibited
             corporations from contributing to political campaigns, through
             direct contributions or outside spending. This progressive law was
@@ -63,45 +75,134 @@ class Montana extends Component {
     var voterMaterials =
       <div className="main-text">
         <ul>
-          <li>
+          <li className="material-item">
+            <a className="material-link">
+              The Missoulian Article: “Missoula Lawyer Ed Sheehy to run for
+              Montana Supreme Court Justice”
+            </a>
+            <br />
             Article providing background on Ed Sheehy when he ran for the seat
           </li>
-          <li>
+          <li className="material-item">
+            <a className="material-link">
+              Pro-Laurie McKinnon Flier
+            </a>
+            <br />
             Flier paid for by the Montana Growth Network which supports Laurie
             McKinnon
           </li>
-          <li>
+          <li className="material-item">
+            <a className="material-link">
+              Anti-Ed Sheehy Fliers
+            </a>
+            <br />
             Two fliers paid for by the Montana Growth Network which advocate
             against Ed Sheehy
           </li>
-          <li>
+          <li className="material-item">
+            <a className="material-link">
+              Billings Gazette Article: “Radio Ad Attacks Court Candidate
+              Sheehy”
+            </a>
+            <br />
             Article discussing radio attack ad on Ed Sheehy funded by the
             Montana Growth Network
           </li>
-          <li>
-            Montana Growth Network website
+          <li className="material-item">
+            <a className="material-link">
+              Montana Growth Network website
+            </a>
           </li>
-          <li>
+          <li className="material-item">
+            <a className="material-link">
+              Map of Ruby River and Bridges
+            </a>
+            <br />
             Map of the remote Ruby River and the bridges crossing or providing
             access to it
           </li>
-          <li>
+          <li className="material-item">
+            <a className="material-link">
+              Ruby River Fishing Guide
+            </a>
+            <br />
             Guide to the Ruby River, including physical description, access
             points, and challenges to recreation on the river
           </li>
-          <li>
+          <li className="material-item">
+            <a className="material-link">
+              Active Montana Supreme Court Case
+            </a>
+            <br />
             Active case disputing landowners rights to create barriers limiting
             access to the Ruby River where it crosses into private property
           </li>
-          <li>
-            Vocabulary list with definitions of legal terms used in the active
-            Supreme Court case
-          </li>
         </ul>
         <p>
-          After reading all the available materials, if you want a hint read
-          this additional material. Please note that the Hint material would
+          After reading all the available materials, if you want a hint
+          read&nbsp;
+          <a className="material-link">
+            this additional material
+          </a>
+          . Please note that the Hint material would
           not have been available to voters prior to the election.
+        </p>
+        {/* <div class="popup">
+              <span class="popuptext" id="myPopup">Popup text...</span>
+            </div>*/}
+
+      </div>
+
+    var solutionChoices =
+      <div className="main-text">
+        <p>
+          Hundreds of thousands of dollars of dark money were poured into the
+          Montana Supreme Court election because:
+        </p>
+        <br />
+        <p>
+          <input
+            type="radio"
+            name="solution"
+            onClick={() => {
+              this.handleResponse("option-one", "option-two", "option-three")
+            }}
+          />
+          A conservative group was angry that Ed Sheehy defended the Christmas
+          Day Killer, and was concerned he will abolish the death penalty if he
+          gets onto the Supreme Court.
+        </p>
+        <p id="option-one" style={{visibility: "hidden", color: "red"}}>
+          This is not the correct answer. Try again or read the solution.
+        </p>
+        <p>
+          <input
+            type="radio"
+            name="solution"
+            onClick={() => {
+              this.handleResponse("option-two", "option-one", "option-three")
+            }}
+          />
+          Private landowners wanted to get rid of the Stream Access Law, and
+          they thought a more conservative judge was more likely to side with
+          them.
+        </p>
+        <p id="option-two" style={{visibility: "hidden", color: "green"}}>
+          You are correct! Click button below to see the complete solution.
+        </p>
+        <p>
+          <input
+            type="radio"
+            name="solution"
+            onClick={() => {
+              this.handleResponse("option-three", "option-two", "option-one")
+            }}
+          />
+          Coal and oil companies wanted to limit the public’s access to rivers
+          so that they could increase their energy outputs in those areas.
+        </p>
+        <p id="option-three" style={{visibility: "hidden", color: "red"}}>
+          This is not the correct answer. Try again or read the solution.
         </p>
       </div>
 
@@ -160,6 +261,7 @@ class Montana extends Component {
           intro={intro}
           factSheet={factSheet}
           voterMaterials={voterMaterials}
+          solutionChoices={solutionChoices}
           solution={solution}
           action={this.props.action}
         />

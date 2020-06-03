@@ -3,6 +3,12 @@ import Scenario from './Scenario'
 
 class Neighborhood extends Component {
 
+  handleResponse = (firstId, secondId, thirdId) => {
+    document.getElementById(secondId).style.visibility = "hidden"
+    document.getElementById(thirdId).style.visibility = "hidden"
+    document.getElementById(firstId).style.visibility = "visible"
+  }
+
   render() {
 
     var intro =
@@ -34,16 +40,18 @@ class Neighborhood extends Component {
     var factSheet =
       <div className="main-text">
         <ul>
-          <li>Population: 74,000</li>
-          <li>Median age: 35.9 years</li>
-          <li>Main industry: technology</li>
-          <li>Housing density: 2,760.6 units per square mile (semi-urban)</li>
-          <li>Renters to Homeowners: 58% to 42%</li>
-          <li>
+          <li className="fact-item">Population: 74,000</li>
+          <li className="fact-item">Median age: 35.9 years</li>
+          <li className="fact-item">Main industry: technology</li>
+          <li className="fact-item">
+            Housing density: 2,760.6 units per square mile (semi-urban)
+          </li>
+          <li className="fact-item">Renters to Homeowners: 58% to 42%</li>
+          <li className="fact-item">
             Known for: being home to Google, Symantec, Intuit, and Mozilla
           </li>
-          <li>Unemployment rate: 5%</li>
-          <li>
+          <li className="fact-item">Unemployment rate: 5%</li>
+          <li className="fact-item">
             Contentious issues in the 2014 election: raising the minimum wage,
             rent control, building housing developments, transportation
             infrastructure
@@ -54,22 +62,108 @@ class Neighborhood extends Component {
     var voterMaterials =
       <div className="main-text">
         <ul>
-          <li>
+          <li className="material-item">
+            <a className="material-link">
+              About Mountain View City
+            </a>
+            <br />
             Description of Mountain View from the local government website
           </li>
-          <li>
+          <li className="material-item">
+            <a className="material-link">
+              Mountain View Voice article: “Voter Guide: City Council”
+            </a>
+            <br />
             Discusses most important issues in election, like methods to
             preserve affordable housing
           </li>
-          <li>
+          <li className="material-item">
+            <a className="material-link">
+              Mountain View Voice article: “Candidates Challenged on ‘Rent
+              Stabilization’”
+            </a>
+            <br />
             Discusses candidate stances on rent control versus other forms of
             providing affordable housing
           </li>
-          <li>About section from Pat Showalter’s campaign website</li>
-          <li>Mountain View City Map</li>
-          <li>NEC priorities list from their website</li>
-          <li>Flier distributed by the NEC advocating for Pat Showalter</li>
+          <li className="material-item">
+            <a className="material-link">
+              Pat Showalter website
+            </a>
+            <br />
+            About section from Pat Showalter’s campaign website
+          </li>
+          <li className="material-item">
+            <a className="material-link">
+              Mountain View City Map
+            </a>
+          </li>
+          <li className="material-item">
+            <a className="material-link">
+              Neighborhood Empowerment Coalition website
+            </a>
+            <br />
+            NEC priorities list from their website
+          </li>
+          <li className="material-item">
+            <a className="material-link">
+              Pat Showalter Flier
+            </a>
+            <br />
+            Flier distributed by the NEC advocating for Pat Showalter
+          </li>
         </ul>
+      </div>
+
+    var solutionChoices =
+      <div className="main-text">
+        <p>
+          The special interest that funneled campaign spending through the NEC
+          to affect the outcome of the Mountain View City Council was:
+        </p>
+        <br />
+        <p>
+          <input
+            type="radio"
+            name="solution"
+            onClick={() => {
+              this.handleResponse("option-one", "option-two", "option-three")
+            }}
+          />
+          A coalition of landlords who wanted to make sure rent control was not
+          implemented in Mountain View.
+        </p>
+        <p id="option-one" style={{visibility: "hidden", color: "green"}}>
+          You are correct! Click button below to see the complete solution.
+        </p>
+        <p>
+          <input
+            type="radio"
+            name="solution"
+            onClick={() => {
+              this.handleResponse("option-two", "option-one", "option-three")
+            }}
+          />
+          An environmentalist group who wanted green solutions to Mountain
+          View’s housing problem.
+        </p>
+        <p id="option-two" style={{visibility: "hidden", color: "red"}}>
+          This is not the correct answer. Try again or read the solution.
+        </p>
+        <p>
+          <input
+            type="radio"
+            name="solution"
+            onClick={() => {
+              this.handleResponse("option-three", "option-two", "option-one")
+            }}
+          />
+          A large tech company who wanted a new housing development so that
+          their employees’ rent was less expensive.
+        </p>
+        <p id="option-three" style={{visibility: "hidden", color: "red"}}>
+          This is not the correct answer. Try again or read the solution.
+        </p>
       </div>
 
     var solution =
@@ -125,6 +219,7 @@ class Neighborhood extends Component {
           intro={intro}
           factSheet={factSheet}
           voterMaterials={voterMaterials}
+          solutionChoices={solutionChoices}
           solution={solution}
           action={this.props.action}
         />

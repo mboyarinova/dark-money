@@ -16,10 +16,10 @@ class PreSolution extends Component {
         </button>
         <button
           className="stack-button"
-          onClick={() => this.props.action("options")}
+          onClick={() => this.props.action("solution-choices")}
           style={{top: "60%"}}
         >
-          See Options
+          See Possible Solutions
         </button>
         <button
           className="stack-button"

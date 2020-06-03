@@ -106,8 +106,10 @@ class Rules extends Component {
                 discuss your ideas.
               </li>
               <li>
-                When you feel ready, read the solution and see how it compares
-                to your ideas.
+                You will have the option of viewing three multiple choice
+                solutions to the case. You can either skip this part and move
+                forward with your own theory, or view the multiple choice
+                options and select one.
               </li>
               <li>
                 Consider: as a voter in this election, would I have been able

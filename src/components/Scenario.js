@@ -4,7 +4,7 @@ import Intro from './Intro'
 import FactSheet from './FactSheet'
 import VoterMaterials from './VoterMaterials'
 import PreSolution from './PreSolution'
-import Options from './Options'
+import SolutionChoices from './SolutionChoices'
 import Solution from './Solution'
 
 class Scenario extends Component {
@@ -41,8 +41,10 @@ class Scenario extends Component {
       case "pre-solution":
         page = <PreSolution action={this.pageHandler} />
         break
-      case "options":
-        page = <Options action={this.pageHandler} />
+      case "solution-choices":
+        page = <SolutionChoices
+                  text={this.props.solutionChoices}
+                  action={this.pageHandler} />
         break
       case "solution":
         page = <Solution

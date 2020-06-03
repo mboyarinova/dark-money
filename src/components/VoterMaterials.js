@@ -5,7 +5,7 @@ class VoterMaterials extends Component {
   render() {
     return (
       <div className="page" id="voter-materials">
-        <h1 className="page-title">Voter Materials</h1>
+        <h1 style={{marginTop:"4%"}}>Voter Materials</h1>
         <div className="main-body">
           {this.props.text}
           <a
