@@ -13,7 +13,7 @@ class VoterMaterials extends Component {
             onClick={() => this.props.action("fact-sheet")}
           >
             &#10094;
-            <div className="hover-label">Fact Sheet</div>
+            <div className="label">Fact Sheet</div>
           </a>
           <a
             className="next"
@@ -22,6 +22,9 @@ class VoterMaterials extends Component {
             &#10095;
           </a>
         </div>
+        {/*<div className="material-popup" style={{display: "none"}}>
+          hello
+        </div>*/}
       </div>
     )
   }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import Intro from './Intro'
 import FactSheet from './FactSheet'
 import VoterMaterials from './VoterMaterials'

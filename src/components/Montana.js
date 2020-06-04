@@ -1,18 +1,8 @@
 import React, { Component } from 'react'
 import Scenario from './Scenario'
+import InputHandler from './InputHandler'
 
 class Montana extends Component {
-
-  popUpHandler = index => {
-    // var popup = document.getElementById("myPopup");
-    // popup.classList.toggle("show");
-  }
-
-  handleResponse = (firstId, secondId, thirdId) => {
-    document.getElementById(secondId).style.visibility = "hidden"
-    document.getElementById(thirdId).style.visibility = "hidden"
-    document.getElementById(firstId).style.visibility = "visible"
-  }
 
   render() {
 
@@ -147,10 +137,6 @@ class Montana extends Component {
           . Please note that the Hint material would
           not have been available to voters prior to the election.
         </p>
-        {/* <div class="popup">
-              <span class="popuptext" id="myPopup">Popup text...</span>
-            </div>*/}
-
       </div>
 
     var solutionChoices =
@@ -165,7 +151,7 @@ class Montana extends Component {
             type="radio"
             name="solution"
             onClick={() => {
-              this.handleResponse("option-one", "option-two", "option-three")
+              InputHandler("option-one", "option-two", "option-three")
             }}
           />
           A conservative group was angry that Ed Sheehy defended the Christmas
@@ -180,7 +166,7 @@ class Montana extends Component {
             type="radio"
             name="solution"
             onClick={() => {
-              this.handleResponse("option-two", "option-one", "option-three")
+              InputHandler("option-two", "option-one", "option-three")
             }}
           />
           Private landowners wanted to get rid of the Stream Access Law, and
@@ -195,7 +181,7 @@ class Montana extends Component {
             type="radio"
             name="solution"
             onClick={() => {
-              this.handleResponse("option-three", "option-two", "option-one")
+              InputHandler("option-three", "option-two", "option-one")
             }}
           />
           Coal and oil companies wanted to limit the public’s access to rivers

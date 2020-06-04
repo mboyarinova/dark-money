@@ -1,24 +1,22 @@
 import React, {Component} from 'react'
-import './App.css'
 import Welcome from './components/Welcome'
 import Rules from './components/Rules'
 import Cases from './components/Cases'
 import Montana from './components/Montana'
 import Neighborhood from './components/Neighborhood'
+import './App.css'
 
 class App extends Component {
 
   constructor(props) {
     super(props)
 
-    this.pageHandler = this.pageHandler.bind(this)
-
     this.state = {
-      page: "welcome" //should be initialized to "welcome"
+      page: "welcome"
     }
   }
 
-  pageHandler(newPage) {
+  pageHandler = newPage => {
     this.setState({
       page: newPage
     })
@@ -45,7 +43,6 @@ class App extends Component {
       default:
         break
     }
-    console.log(this.state.page)
     return <div className="App">{page}</div>
   }
 }

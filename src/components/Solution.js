@@ -1,47 +1,20 @@
 import React, { Component } from 'react'
+import withSlides from './withSlides'
 
 class Solution extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      slideIndex: 0
-    }
-  }
-
-  handleDots = index => {
-    var dots = document.getElementsByClassName("dot")
-    for (var i = 0; i < 3; i++) {
-      dots[i].className = dots[i].className.replace(" active", "")
-    }
-    dots[index].className += " active"
-  }
-
-  plusSlides = i => {
-    this.setState(prevState => {
-      var index = prevState.slideIndex + i
-      this.handleDots(index)
-      return {slideIndex: index}
-    })
-  }
-
-  currentSlide = index => {
-    this.handleDots(index)
-    this.setState({
-      slideIndex: index
-    })
-  }
-
   render() {
+
+    const {slideIndex, handleDots, plusSlides, currentSlide} = this.props
 
     var ruleText
     var playButton = null
     var prevButton =
-      <a className="prev" onClick={() => this.plusSlides(-1)}>&#10094;</a>
+      <a className="prev" onClick={() => plusSlides(-1)}>&#10094;</a>
     var nextButton =
-      <a className="next" onClick={() => this.plusSlides(1)}>&#10095;</a>
+      <a className="next" onClick={() => plusSlides(1)}>&#10095;</a>
 
-    switch(this.state.slideIndex) {
+    switch(slideIndex) {
       case 0:
         ruleText = this.props.text[0]
         prevButton = null
@@ -97,13 +70,13 @@ class Solution extends Component {
           Play New Game
         </button>
         <div class="carousel-dots">
-          <span class="dot active" onClick={() => this.currentSlide(0)}></span>
-          <span class="dot" onClick={() => this.currentSlide(1)}></span>
-          <span class="dot" onClick={() => this.currentSlide(2)}></span>
+          <span class="dot active" onClick={() => currentSlide(0)}></span>
+          <span class="dot" onClick={() => currentSlide(1)}></span>
+          <span class="dot" onClick={() => currentSlide(2)}></span>
         </div>
       </div>
     )
   }
 }
 
-export default Solution
+export default withSlides(Solution)

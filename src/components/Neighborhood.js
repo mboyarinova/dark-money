@@ -1,13 +1,8 @@
 import React, { Component } from 'react'
 import Scenario from './Scenario'
+import InputHandler from './InputHandler'
 
 class Neighborhood extends Component {
-
-  handleResponse = (firstId, secondId, thirdId) => {
-    document.getElementById(secondId).style.visibility = "hidden"
-    document.getElementById(thirdId).style.visibility = "hidden"
-    document.getElementById(firstId).style.visibility = "visible"
-  }
 
   render() {
 
@@ -127,7 +122,7 @@ class Neighborhood extends Component {
             type="radio"
             name="solution"
             onClick={() => {
-              this.handleResponse("option-one", "option-two", "option-three")
+              InputHandler("option-one", "option-two", "option-three")
             }}
           />
           A coalition of landlords who wanted to make sure rent control was not
@@ -141,7 +136,7 @@ class Neighborhood extends Component {
             type="radio"
             name="solution"
             onClick={() => {
-              this.handleResponse("option-two", "option-one", "option-three")
+              InputHandler("option-two", "option-one", "option-three")
             }}
           />
           An environmentalist group who wanted green solutions to Mountain
@@ -155,7 +150,7 @@ class Neighborhood extends Component {
             type="radio"
             name="solution"
             onClick={() => {
-              this.handleResponse("option-three", "option-two", "option-one")
+              InputHandler("option-three", "option-two", "option-one")
             }}
           />
           A large tech company who wanted a new housing development so that
