@@ -5,14 +5,14 @@ class Rules extends Component {
 
   render() {
 
-    const {slideIndex, handleDots, plusSlides, currentSlide} = this.props
+    const {slideIndex, plusSlides, currentSlide} = this.props
 
     var ruleText
     var playButton = null
     var prevButton =
-      <a className="prev" onClick={() => plusSlides(-1)}>&#10094;</a>
+      <div className="prev" onClick={() => plusSlides(-1)}>&#10094;</div>
     var nextButton =
-      <a className="next" onClick={() => plusSlides(1)}>&#10095;</a>
+      <div className="next" onClick={() => plusSlides(1)}>&#10095;</div>
 
     switch(slideIndex) {
       case 0:
@@ -116,10 +116,10 @@ class Rules extends Component {
           Main Page
         </button>
         {playButton}
-        <div class="carousel-dots">
-          <span class="dot active" onClick={() => currentSlide(0)}></span>
-          <span class="dot" onClick={() => currentSlide(1)}></span>
-          <span class="dot" onClick={() => currentSlide(2)}></span>
+        <div className="carousel-dots">
+          <span className="dot active" onClick={() => currentSlide(0)}></span>
+          <span className="dot" onClick={() => currentSlide(1)}></span>
+          <span className="dot" onClick={() => currentSlide(2)}></span>
         </div>
       </div>
     )

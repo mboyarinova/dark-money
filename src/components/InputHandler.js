@@ -1,7 +1,9 @@
-function InputHandler(firstId, secondId, thirdId) {
-  document.getElementById(secondId).style.visibility = "hidden"
-  document.getElementById(thirdId).style.visibility = "hidden"
-  document.getElementById(firstId).style.visibility = "visible"
+function InputHandler(index) {
+  var options = document.getElementsByClassName("option")
+  for (var i = 0; i < options.length; i++) {
+    options[i].style.visibility = "hidden"
+  }
+  options[index].style.visibility = "visible"
 }
 
 export default InputHandler

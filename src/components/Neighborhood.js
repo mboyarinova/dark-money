@@ -58,52 +58,52 @@ class Neighborhood extends Component {
       <div className="main-text">
         <ul>
           <li className="material-item">
-            <a className="material-link">
+            <u>
               About Mountain View City
-            </a>
+            </u>
             <br />
             Description of Mountain View from the local government website
           </li>
           <li className="material-item">
-            <a className="material-link">
+            <u>
               Mountain View Voice article: “Voter Guide: City Council”
-            </a>
+            </u>
             <br />
             Discusses most important issues in election, like methods to
             preserve affordable housing
           </li>
           <li className="material-item">
-            <a className="material-link">
+            <u>
               Mountain View Voice article: “Candidates Challenged on ‘Rent
               Stabilization’”
-            </a>
+            </u>
             <br />
             Discusses candidate stances on rent control versus other forms of
             providing affordable housing
           </li>
           <li className="material-item">
-            <a className="material-link">
+            <u>
               Pat Showalter website
-            </a>
+            </u>
             <br />
             About section from Pat Showalter’s campaign website
           </li>
           <li className="material-item">
-            <a className="material-link">
+            <u>
               Mountain View City Map
-            </a>
+            </u>
           </li>
           <li className="material-item">
-            <a className="material-link">
+            <u>
               Neighborhood Empowerment Coalition website
-            </a>
+            </u>
             <br />
             NEC priorities list from their website
           </li>
           <li className="material-item">
-            <a className="material-link">
+            <u>
               Pat Showalter Flier
-            </a>
+            </u>
             <br />
             Flier distributed by the NEC advocating for Pat Showalter
           </li>
@@ -121,42 +121,36 @@ class Neighborhood extends Component {
           <input
             type="radio"
             name="solution"
-            onClick={() => {
-              InputHandler("option-one", "option-two", "option-three")
-            }}
+            onClick={() => InputHandler(0)}
           />
           A coalition of landlords who wanted to make sure rent control was not
           implemented in Mountain View.
         </p>
-        <p id="option-one" style={{visibility: "hidden", color: "green"}}>
+        <p className="option" style={{color: "green"}}>
           You are correct! Click button below to see the complete solution.
         </p>
         <p>
           <input
             type="radio"
             name="solution"
-            onClick={() => {
-              InputHandler("option-two", "option-one", "option-three")
-            }}
+            onClick={() => InputHandler(1)}
           />
           An environmentalist group who wanted green solutions to Mountain
           View’s housing problem.
         </p>
-        <p id="option-two" style={{visibility: "hidden", color: "red"}}>
+        <p className="option" style={{color: "red"}}>
           This is not the correct answer. Try again or read the solution.
         </p>
         <p>
           <input
             type="radio"
             name="solution"
-            onClick={() => {
-              InputHandler("option-three", "option-two", "option-one")
-            }}
+            onClick={() => InputHandler(2)}
           />
           A large tech company who wanted a new housing development so that
           their employees’ rent was less expensive.
         </p>
-        <p id="option-three" style={{visibility: "hidden", color: "red"}}>
+        <p className="option" style={{color: "red"}}>
           This is not the correct answer. Try again or read the solution.
         </p>
       </div>

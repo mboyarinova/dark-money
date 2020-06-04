@@ -139,10 +139,9 @@ p {
   margin: 10px 0;
 }
 
-.material-link {
+u {
   color: blue;
   cursor: pointer;
-  text-decoration: underline;
 }
 
 .material-item {
@@ -151,6 +150,10 @@ p {
 
 input {
   cursor: pointer;
+}
+
+.option {
+  visibility: hidden;
 }
 
 /* .popup {

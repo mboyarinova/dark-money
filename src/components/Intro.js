@@ -8,20 +8,20 @@ class Intro extends Component {
         <h1 className="page-title">Introduction</h1>
         <div className="main-body">
           {this.props.text}
-          <a
+          <div
             className="prev"
-            onClick={() => this.props.action("cases")}
+            onClick={() => this.props.back("cases")}
           >
             &#10094;
             <div className="label">Cases</div>
-          </a>
-          <a
+          </div>
+          <div
             className="next"
             onClick={() => this.props.action("fact-sheet")}
           >
             &#10095;
             <div className="label">Fact Sheet</div>
-          </a>
+          </div>
         </div>
       </div>
     )

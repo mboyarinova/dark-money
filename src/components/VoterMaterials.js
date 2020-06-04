@@ -8,19 +8,19 @@ class VoterMaterials extends Component {
         <h1 style={{marginTop:"4%"}}>Voter Materials</h1>
         <div className="main-body">
           {this.props.text}
-          <a
+          <div
             className="prev"
             onClick={() => this.props.action("fact-sheet")}
           >
             &#10094;
             <div className="label">Fact Sheet</div>
-          </a>
-          <a
+          </div>
+          <div
             className="next"
             onClick={() => this.props.action("pre-solution")}
           >
             &#10095;
-          </a>
+          </div>
         </div>
         {/*<div className="material-popup" style={{display: "none"}}>
           hello

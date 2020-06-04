@@ -25,7 +25,11 @@ class Scenario extends Component {
     var page
     switch(this.state.page) {
       case "intro":
-        page = <Intro text={this.props.intro} action={this.pageHandler} />
+        page = <Intro
+                  text={this.props.intro}
+                  action={this.pageHandler}
+                  back={this.props.action}
+                />
         break
       case "fact-sheet":
         page =
@@ -49,10 +53,8 @@ class Scenario extends Component {
         page = <Solution
                   text={this.props.solution}
                   action={this.pageHandler}
+                  back={this.props.action}
                 />
-        break
-      case "cases":
-        this.props.action("cases")
         break
       default:
         break

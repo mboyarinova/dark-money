@@ -37,7 +37,6 @@ const withSlides = WrappedComponent => {
     render() {
       return <WrappedComponent
                slideIndex={this.state.slideIndex}
-               handleDots={this.handleDots}
                plusSlides={this.plusSlides}
                currentSlide={this.currentSlide}
                {... this.props}

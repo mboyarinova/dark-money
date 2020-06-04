@@ -66,63 +66,63 @@ class Montana extends Component {
       <div className="main-text">
         <ul>
           <li className="material-item">
-            <a className="material-link">
+            <u>
               The Missoulian Article: “Missoula Lawyer Ed Sheehy to run for
               Montana Supreme Court Justice”
-            </a>
+            </u>
             <br />
             Article providing background on Ed Sheehy when he ran for the seat
           </li>
           <li className="material-item">
-            <a className="material-link">
+            <u>
               Pro-Laurie McKinnon Flier
-            </a>
+            </u>
             <br />
             Flier paid for by the Montana Growth Network which supports Laurie
             McKinnon
           </li>
           <li className="material-item">
-            <a className="material-link">
+            <u>
               Anti-Ed Sheehy Fliers
-            </a>
+            </u>
             <br />
             Two fliers paid for by the Montana Growth Network which advocate
             against Ed Sheehy
           </li>
           <li className="material-item">
-            <a className="material-link">
+            <u>
               Billings Gazette Article: “Radio Ad Attacks Court Candidate
               Sheehy”
-            </a>
+            </u>
             <br />
             Article discussing radio attack ad on Ed Sheehy funded by the
             Montana Growth Network
           </li>
           <li className="material-item">
-            <a className="material-link">
+            <u>
               Montana Growth Network website
-            </a>
+            </u>
           </li>
           <li className="material-item">
-            <a className="material-link">
+            <u>
               Map of Ruby River and Bridges
-            </a>
+            </u>
             <br />
             Map of the remote Ruby River and the bridges crossing or providing
             access to it
           </li>
           <li className="material-item">
-            <a className="material-link">
+            <u>
               Ruby River Fishing Guide
-            </a>
+            </u>
             <br />
             Guide to the Ruby River, including physical description, access
             points, and challenges to recreation on the river
           </li>
           <li className="material-item">
-            <a className="material-link">
+            <u>
               Active Montana Supreme Court Case
-            </a>
+            </u>
             <br />
             Active case disputing landowners rights to create barriers limiting
             access to the Ruby River where it crosses into private property
@@ -131,9 +131,9 @@ class Montana extends Component {
         <p>
           After reading all the available materials, if you want a hint
           read&nbsp;
-          <a className="material-link">
+          <u>
             this additional material
-          </a>
+          </u>
           . Please note that the Hint material would
           not have been available to voters prior to the election.
         </p>
@@ -150,44 +150,38 @@ class Montana extends Component {
           <input
             type="radio"
             name="solution"
-            onClick={() => {
-              InputHandler("option-one", "option-two", "option-three")
-            }}
+            onClick={() => InputHandler(0)}
           />
           A conservative group was angry that Ed Sheehy defended the Christmas
           Day Killer, and was concerned he will abolish the death penalty if he
           gets onto the Supreme Court.
         </p>
-        <p id="option-one" style={{visibility: "hidden", color: "red"}}>
+        <p className="option" style={{color: "red"}}>
           This is not the correct answer. Try again or read the solution.
         </p>
         <p>
           <input
             type="radio"
             name="solution"
-            onClick={() => {
-              InputHandler("option-two", "option-one", "option-three")
-            }}
+            onClick={() => InputHandler(1)}
           />
           Private landowners wanted to get rid of the Stream Access Law, and
           they thought a more conservative judge was more likely to side with
           them.
         </p>
-        <p id="option-two" style={{visibility: "hidden", color: "green"}}>
+        <p className="option" style={{color: "green"}}>
           You are correct! Click button below to see the complete solution.
         </p>
         <p>
           <input
             type="radio"
             name="solution"
-            onClick={() => {
-              InputHandler("option-three", "option-two", "option-one")
-            }}
+            onClick={() => InputHandler(2)}
           />
           Coal and oil companies wanted to limit the public’s access to rivers
           so that they could increase their energy outputs in those areas.
         </p>
-        <p id="option-three" style={{visibility: "hidden", color: "red"}}>
+        <p className="option" style={{color: "red"}}>
           This is not the correct answer. Try again or read the solution.
         </p>
       </div>

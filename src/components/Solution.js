@@ -5,14 +5,14 @@ class Solution extends Component {
 
   render() {
 
-    const {slideIndex, handleDots, plusSlides, currentSlide} = this.props
+    const {slideIndex, plusSlides, currentSlide} = this.props
 
     var ruleText
     var playButton = null
     var prevButton =
-      <a className="prev" onClick={() => plusSlides(-1)}>&#10094;</a>
+      <div className="prev" onClick={() => plusSlides(-1)}>&#10094;</div>
     var nextButton =
-      <a className="next" onClick={() => plusSlides(1)}>&#10095;</a>
+      <div className="next" onClick={() => plusSlides(1)}>&#10095;</div>
 
     switch(slideIndex) {
       case 0:
@@ -39,10 +39,10 @@ class Solution extends Component {
         nextButton = null
         playButton =
           <button
-            onClick={() => this.props.action("cases")}
-            style={{top: "83%", right: "15%"}}
+            onClick={() => this.props.back("cases")}
+            style={{top: "88%", right: "15%"}}
           >
-            Play
+            Play New Game
           </button>
         break
       default:
@@ -63,16 +63,11 @@ class Solution extends Component {
         >
           See Materials
         </button>
-        <button
-          onClick={() => this.props.action("cases")}
-          style={{top: "88%", right: "15%"}}
-        >
-          Play New Game
-        </button>
-        <div class="carousel-dots">
-          <span class="dot active" onClick={() => currentSlide(0)}></span>
-          <span class="dot" onClick={() => currentSlide(1)}></span>
-          <span class="dot" onClick={() => currentSlide(2)}></span>
+        {playButton}
+        <div className="carousel-dots">
+          <span className="dot active" onClick={() => currentSlide(0)}></span>
+          <span className="dot" onClick={() => currentSlide(1)}></span>
+          <span className="dot" onClick={() => currentSlide(2)}></span>
         </div>
       </div>
     )
