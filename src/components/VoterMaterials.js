@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Popup from './Popup'
 
 class VoterMaterials extends Component {
 
@@ -22,9 +23,9 @@ class VoterMaterials extends Component {
             &#10095;
           </div>
         </div>
-        {/*<div className="material-popup" style={{display: "none"}}>
-          hello
-        </div>*/}
+
+        <Popup />
+
       </div>
     )
   }

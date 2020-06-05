@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Scenario from './Scenario'
 import InputHandler from './InputHandler'
+import PopupHandler from './PopupHandler'
 
 class Montana extends Component {
 
@@ -66,7 +67,7 @@ class Montana extends Component {
       <div className="main-text">
         <ul>
           <li className="material-item">
-            <u>
+            <u onClick={PopupHandler}>
               The Missoulian Article: “Missoula Lawyer Ed Sheehy to run for
               Montana Supreme Court Justice”
             </u>
@@ -74,7 +75,7 @@ class Montana extends Component {
             Article providing background on Ed Sheehy when he ran for the seat
           </li>
           <li className="material-item">
-            <u>
+            <u onClick={PopupHandler}>
               Pro-Laurie McKinnon Flier
             </u>
             <br />
@@ -82,7 +83,7 @@ class Montana extends Component {
             McKinnon
           </li>
           <li className="material-item">
-            <u>
+            <u onClick={PopupHandler}>
               Anti-Ed Sheehy Fliers
             </u>
             <br />
@@ -90,7 +91,7 @@ class Montana extends Component {
             against Ed Sheehy
           </li>
           <li className="material-item">
-            <u>
+            <u onClick={PopupHandler}>
               Billings Gazette Article: “Radio Ad Attacks Court Candidate
               Sheehy”
             </u>
@@ -99,12 +100,12 @@ class Montana extends Component {
             Montana Growth Network
           </li>
           <li className="material-item">
-            <u>
+            <u onClick={PopupHandler}>
               Montana Growth Network website
             </u>
           </li>
           <li className="material-item">
-            <u>
+            <u onClick={PopupHandler}>
               Map of Ruby River and Bridges
             </u>
             <br />
@@ -112,7 +113,7 @@ class Montana extends Component {
             access to it
           </li>
           <li className="material-item">
-            <u>
+            <u onClick={PopupHandler}>
               Ruby River Fishing Guide
             </u>
             <br />
@@ -120,7 +121,7 @@ class Montana extends Component {
             points, and challenges to recreation on the river
           </li>
           <li className="material-item">
-            <u>
+            <u onClick={PopupHandler}>
               Active Montana Supreme Court Case
             </u>
             <br />
@@ -131,7 +132,7 @@ class Montana extends Component {
         <p>
           After reading all the available materials, if you want a hint
           read&nbsp;
-          <u>
+          <u onClick={PopupHandler}>
             this additional material
           </u>
           . Please note that the Hint material would

@@ -83,6 +83,10 @@ class Rules extends Component {
                 options and select one.
               </li>
               <li>
+                When you feel ready, read the solution and see how it compares
+                to your ideas.
+              </li>
+              <li>
                 Consider: as a voter in this election, would I have been able
                 to make an informed decision?
               </li>
