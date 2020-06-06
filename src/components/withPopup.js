@@ -11,14 +11,10 @@ const withPopup = WrappedComponent => {
       }
     }
 
-    updateMaterial = newMaterial => {
+    popupHandler = newMaterial => {
       this.setState({
         material: newMaterial
       })
-    }
-
-    popupHandler = newMaterial => {
-      this.updateMaterial(newMaterial)
       document.getElementsByClassName("main-body")[0].style.display = "none"
       document.getElementsByClassName("popup")[0].style.display = "block"
     }
