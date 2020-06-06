@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 import Scenario from './Scenario'
 import InputHandler from './InputHandler'
+import Popup from './Popup'
+import withPopup from './withPopup'
 
 class Neighborhood extends Component {
 
   render() {
+
+    const {material, popupHandler} = this.props
 
     var intro =
       <div className="main-text">
@@ -58,14 +62,14 @@ class Neighborhood extends Component {
       <div className="main-text">
         <ul>
           <li className="material-item">
-            <u>
+            <u onClick={() => popupHandler('./materials/NEC/About.png')}>
               About Mountain View City
             </u>
             <br />
             Description of Mountain View from the local government website
           </li>
           <li className="material-item">
-            <u>
+            <u onClick={() => popupHandler('./materials/NEC/Guide.png')}>
               Mountain View Voice article: “Voter Guide: City Council”
             </u>
             <br />
@@ -73,7 +77,7 @@ class Neighborhood extends Component {
             preserve affordable housing
           </li>
           <li className="material-item">
-            <u>
+            <u onClick={() => popupHandler('./materials/NEC/Candidates.png')}>
               Mountain View Voice article: “Candidates Challenged on ‘Rent
               Stabilization’”
             </u>
@@ -89,7 +93,7 @@ class Neighborhood extends Component {
             About section from Pat Showalter’s campaign website
           </li>
           <li className="material-item">
-            <u>
+            <u onClick={() => popupHandler('./materials/NEC/Map.png')}>
               Mountain View City Map
             </u>
           </li>
@@ -101,7 +105,7 @@ class Neighborhood extends Component {
             NEC priorities list from their website
           </li>
           <li className="material-item">
-            <u>
+            <u onClick={() => popupHandler('./materials/NEC/Flier.png')}>
               Pat Showalter Flier
             </u>
             <br />
@@ -208,6 +212,7 @@ class Neighborhood extends Component {
           intro={intro}
           factSheet={factSheet}
           voterMaterials={voterMaterials}
+          popup=<Popup material={material} />
           solutionChoices={solutionChoices}
           solution={solution}
           action={this.props.action}
@@ -217,4 +222,4 @@ class Neighborhood extends Component {
   }
 }
 
-export default Neighborhood
+export default withPopup(Neighborhood)

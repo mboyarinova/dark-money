@@ -38,6 +38,7 @@ class Scenario extends Component {
       case "voter-materials":
         page = <VoterMaterials
                   text={this.props.voterMaterials}
+                  popup={this.props.popup}
                   action={this.pageHandler}
                 />
         break

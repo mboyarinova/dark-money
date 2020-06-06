@@ -21,7 +21,7 @@ class Popup extends Component {
             <img
               className="popup-img"
               alt=""
-              src={require('./materials/MGN/Missoulian Article.png')}
+              src={require("" + this.props.material)}
             />
           </div>
         </div>
