@@ -8,7 +8,7 @@ class Neighborhood extends Component {
 
   render() {
 
-    const {material, popupHandler} = this.props
+    const {material, numPages, popupType, popupHandler} = this.props
 
     var intro =
       <div className="main-text">
@@ -62,14 +62,14 @@ class Neighborhood extends Component {
       <div className="main-text">
         <ul>
           <li className="material-item">
-            <u onClick={() => popupHandler('./materials/NEC/About.png')}>
+            <u onClick={() => popupHandler(['NEC/About.png'], 'onePage', 1)}>
               About Mountain View City
             </u>
             <br />
             Description of Mountain View from the local government website
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler('./materials/NEC/Guide.png')}>
+            <u onClick={() => popupHandler(['NEC/Guide.png'], 'onePage', 1)}>
               Mountain View Voice article: “Voter Guide: City Council”
             </u>
             <br />
@@ -77,7 +77,7 @@ class Neighborhood extends Component {
             preserve affordable housing
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler('./materials/NEC/Candidates.png')}>
+            <u onClick={() => popupHandler(['NEC/Candidates.png'], 'onePage', 1)}>
               Mountain View Voice article: “Candidates Challenged on ‘Rent
               Stabilization’”
             </u>
@@ -86,26 +86,26 @@ class Neighborhood extends Component {
             providing affordable housing
           </li>
           <li className="material-item">
-            <u>
+            <u onClick={() => popupHandler(['NEC/Pat-1.png', 'NEC/Pat-2.png'], 'nPages', 2)}>
               Pat Showalter website
             </u>
             <br />
             About section from Pat Showalter’s campaign website
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler('./materials/NEC/Map.png')}>
+            <u onClick={() => popupHandler(['NEC/Map.png'], 'onePage', 1)}>
               Mountain View City Map
             </u>
           </li>
           <li className="material-item">
-            <u>
+            <u onClick={() => popupHandler(['NEC/Website-1.png', 'NEC/Website-2.png'], 'nPages', 2)}>
               Neighborhood Empowerment Coalition website
             </u>
             <br />
             NEC priorities list from their website
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler('./materials/NEC/Flier.png')}>
+            <u onClick={() => popupHandler(['NEC/Flier.png'], 'onePage', 1)}>
               Pat Showalter Flier
             </u>
             <br />
@@ -206,13 +206,19 @@ class Neighborhood extends Component {
         </div>
       ]
 
+    var popup = <Popup
+                  material={material}
+                  numPages={numPages}
+                  type={popupType}
+                />
+
     return (
       <React.Fragment>
         <Scenario
           intro={intro}
           factSheet={factSheet}
           voterMaterials={voterMaterials}
-          popup=<Popup material={material} />
+          popup={popup}
           solutionChoices={solutionChoices}
           solution={solution}
           action={this.props.action}

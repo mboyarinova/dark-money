@@ -13,7 +13,7 @@ const withSlides = WrappedComponent => {
 
     handleDots = index => {
       var dots = document.getElementsByClassName("dot")
-      for (var i = 0; i < 3; i++) {
+      for (var i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "")
       }
       dots[index].className += " active"

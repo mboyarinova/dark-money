@@ -8,7 +8,7 @@ class Montana extends Component {
 
   render() {
 
-    const {material, popupHandler} = this.props
+    const {material, numPages, popupType, popupHandler} = this.props
 
     var intro =
       <div className="main-text">
@@ -70,7 +70,7 @@ class Montana extends Component {
       <div className="main-text">
         <ul>
           <li className="material-item">
-            <u onClick={() => popupHandler('./materials/MGN/Missoulian.png')}>
+            <u onClick={() => popupHandler(['MGN/Missoulian.png'], 'onePage', 1)}>
               The Missoulian Article: “Missoula Lawyer Ed Sheehy to run for
               Montana Supreme Court Justice”
             </u>
@@ -78,7 +78,7 @@ class Montana extends Component {
             Article providing background on Ed Sheehy when he ran for the seat
           </li>
           <li className="material-item">
-            <u> {/*add onClick*/}
+            <u onClick={() => popupHandler(['MGN/ProFlier-1.png', 'MGN/ProFlier-2.png'], 'flier', 2)}>
               Pro-Laurie McKinnon Flier
             </u>
             <br />
@@ -94,7 +94,7 @@ class Montana extends Component {
             against Ed Sheehy
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler('./materials/MGN/Billings.png')}>
+            <u onClick={() => popupHandler(['MGN/Billings.png'], 'onePage', 1)}>
               Billings Gazette Article: “Radio Ad Attacks Court Candidate
               Sheehy”
             </u>
@@ -103,12 +103,12 @@ class Montana extends Component {
             Montana Growth Network
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler('./materials/MGN/Website.png')}>
+            <u onClick={() => popupHandler(['MGN/Website.png'], 'onePage', 1)}>
               Montana Growth Network website
             </u>
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler('./materials/MGN/Map.png')}> {/*fit the entire map on screen instead??*/}
+            <u onClick={() => popupHandler(['MGN/Map.png'], 'onePage', 1)}> {/*fit the entire map on screen instead??*/}
               Map of Ruby River and Bridges
             </u>
             <br />
@@ -116,7 +116,7 @@ class Montana extends Component {
             access to it
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler('./materials/MGN/Guide.png')}>
+            <u onClick={() => popupHandler(['MGN/Guide.png'], 'onePage', 1)}>
               Ruby River Fishing Guide
             </u>
             <br />
@@ -124,7 +124,7 @@ class Montana extends Component {
             points, and challenges to recreation on the river
           </li>
           <li className="material-item">
-            <u onClick={popupHandler}>
+            <u onClick={() => popupHandler(['MGN/Case-1.png', 'MGN/Case-2.png', 'MGN/Case-3.png', 'MGN/Case-4.png', 'MGN/Case-5.png', 'MGN/Case-6.png'], 'nPages', 6)}>
               Active Montana Supreme Court Case
             </u>
             <br />
@@ -135,7 +135,7 @@ class Montana extends Component {
         <p>
           After reading all the available materials, if you want a hint
           read&nbsp;
-          <u onClick={() => popupHandler('./materials/MGN/Guardian.png')}>
+          <u onClick={() => popupHandler(['MGN/Guardian.png'], 'onePage', 1)}>
             this additional material
           </u>
           . Please note that the Hint material would
@@ -239,13 +239,19 @@ class Montana extends Component {
         </div>
       ]
 
+    var popup = <Popup
+                  material={material}
+                  numPages={numPages}
+                  type={popupType}
+                />
+
     return (
       <React.Fragment>
         <Scenario
           intro={intro}
           factSheet={factSheet}
           voterMaterials={voterMaterials}
-          popup=<Popup material={material} />
+          popup={popup}
           solutionChoices={solutionChoices}
           solution={solution}
           action={this.props.action}
