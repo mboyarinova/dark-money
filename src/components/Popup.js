@@ -39,7 +39,7 @@ class Popup extends Component {
 
       case 'flip':
         material =
-          <div className="popup-flier">
+          <div className="popup-material">
             <div style={{height: "100%"}}>
               <img
                 className="flier"

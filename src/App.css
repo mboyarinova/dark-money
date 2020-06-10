@@ -169,13 +169,6 @@ input {
   width: 70%;
 }
 
-.popup-flier {
-  height: 93%;
-  position: absolute;
-  top: 7%;
-  width: 100%;
-}
-
 .close-button {
   border-color: black;
   border-radius: 0 6px;

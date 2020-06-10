@@ -87,9 +87,24 @@ class Montana extends Component {
             McKinnon
           </li>
           <li className="material-item">
-            <u> {/*add onClick*/}
-              Anti-Ed Sheehy Fliers
+            <div style={{float: "left"}}>
+              Anti-Ed Sheehy Fliers (
+            </div>
+            <u
+              style={{float: "left"}}
+              onClick={() => popupHandler(['MGN/AntiFlier_1.png',
+                                           'MGN/AntiFlier_2.png'], 'flip')}
+            >
+              first
             </u>
+            &nbsp;and&nbsp;
+            <u
+              onClick={() => popupHandler(['MGN/AntiFlier_3.png',
+                                            'MGN/AntiFlier_4.png'], 'flip')}
+            >
+              second
+            </u>
+            )
             <br />
             Two fliers paid for by the Montana Growth Network which advocate
             against Ed Sheehy
