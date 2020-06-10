@@ -36,26 +36,16 @@ class Popup extends Component {
     var material
 
     switch(this.props.type) {
-      case 'onePage':
+
+      case 'flip':
         material =
-          <div className="popup-material">
-            <div>
+          <div className="popup-flier">
+            <div style={{height: "100%"}}>
               <img
-                className="popup-img"
+                className="flier"
                 alt=""
-                src={require("./materials/" + this.props.material[0])}
-              />
-            </div>
-          </div>
-        break
-      case 'flier':
-        material =
-          <div className="popup-material">
-            <div>
-              <img
-                className="popup-img"
-                alt=""
-                src={require("./materials/" + this.props.material[Number(this.state.flipped)])}
+                src={require("./materials/" +
+                      this.props.material[Number(this.state.flipped)])}
               />
             </div>
             <button
@@ -68,37 +58,42 @@ class Popup extends Component {
             </button>
           </div>
         break
-      case 'nPages':
+
+      case 'turn':
 
         var prevButton =
-          <div className="prev" onClick={() => this.plusSlides(-1)}>&#10094;</div>
+          <div className="prev" onClick={() => this.plusSlides(-1)}>
+            &#10094;
+          </div>
         var nextButton =
-          <div className="next" onClick={() => this.plusSlides(1)}>&#10095;</div>
+          <div className="next" onClick={() => this.plusSlides(1)}>
+            &#10095;
+          </div>
 
-        switch(this.state.currentPage) {
-          case 0:
-            prevButton = null
-            break
-          case (this.props.numPages-1):
-            nextButton = null
-            break
-          default:
-            break
+        var page = this.state.currentPage
+
+        if (page === 0) {
+          prevButton = null
+        }
+        if (page === this.props.material.length - 1) {
+          nextButton = null
         }
 
         material =
           <div className="popup-material">
-            <div>
+            <div className="temp">
               <img
                 className="popup-img"
                 alt=""
-                src={require("./materials/" + this.props.material[this.state.currentPage])}
+                src={require("./materials/" +
+                      this.props.material[this.state.currentPage])}
               />
             </div>
             {prevButton}
             {nextButton}
           </div>
         break
+
       default:
         break
     }

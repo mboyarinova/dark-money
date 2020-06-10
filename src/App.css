@@ -169,10 +169,8 @@ input {
   width: 70%;
 }
 
-.popup-material {
+.popup-flier {
   height: 93%;
-  overflow-x: hidden;
-  overflow-y: auto;
   position: absolute;
   top: 7%;
   width: 100%;
@@ -195,10 +193,47 @@ input {
   box-shadow: none;
 }
 
-.popup-img {
-  height: 90%;
-  position: relative;
+/*version one of material design*/
+
+.popup-material {
+  height: 93%;
+  position: absolute;
+  top: 7%;
   width: 100%;
+}
+
+.popup-img {
+  width: 100%;
+}
+
+.temp {
+  height: 100%;
+  left: 8%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: absolute;
+  width: 84%;
+}
+
+/*version two of material design*/
+
+/* .popup-material {
+  height: 93%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: absolute;
+  top: 7%;
+  width: 100%;
+}
+
+.popup-img {
+  width: 90%;
+  position: relative;
+} */
+
+.flier {
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .rotate {
@@ -210,6 +245,12 @@ input {
 }
 
 .flip-button {
-  width: 4%;
+  border-radius: 6px;
+  height: 10%;
+  min-height: 0;
+  position: absolute;
+  right: 1%;
+  top: 40%;
+  width: 5%;
   z-index: 1;
 }

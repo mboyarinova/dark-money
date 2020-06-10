@@ -8,7 +8,7 @@ class Montana extends Component {
 
   render() {
 
-    const {material, numPages, popupType, popupHandler} = this.props
+    const {material, popupType, popupHandler} = this.props
 
     var intro =
       <div className="main-text">
@@ -70,7 +70,7 @@ class Montana extends Component {
       <div className="main-text">
         <ul>
           <li className="material-item">
-            <u onClick={() => popupHandler(['MGN/Missoulian.png'], 'onePage', 1)}>
+            <u onClick={() => popupHandler(['MGN/Missoulian.png'], 'turn')}>
               The Missoulian Article: “Missoula Lawyer Ed Sheehy to run for
               Montana Supreme Court Justice”
             </u>
@@ -78,7 +78,8 @@ class Montana extends Component {
             Article providing background on Ed Sheehy when he ran for the seat
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['MGN/ProFlier-1.png', 'MGN/ProFlier-2.png'], 'flier', 2)}>
+            <u onClick={() => popupHandler(['MGN/ProFlier-1.png',
+                                            'MGN/ProFlier-2.png'], 'flip')}>
               Pro-Laurie McKinnon Flier
             </u>
             <br />
@@ -94,7 +95,7 @@ class Montana extends Component {
             against Ed Sheehy
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['MGN/Billings.png'], 'onePage', 1)}>
+            <u onClick={() => popupHandler(['MGN/Billings.png'], 'turn')}>
               Billings Gazette Article: “Radio Ad Attacks Court Candidate
               Sheehy”
             </u>
@@ -103,12 +104,12 @@ class Montana extends Component {
             Montana Growth Network
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['MGN/Website.png'], 'onePage', 1)}>
+            <u onClick={() => popupHandler(['MGN/Website.png'], 'turn')}>
               Montana Growth Network website
             </u>
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['MGN/Map.png'], 'onePage', 1)}> {/*fit the entire map on screen instead??*/}
+            <u onClick={() => popupHandler(['MGN/Map.png'], 'turn')}>
               Map of Ruby River and Bridges
             </u>
             <br />
@@ -116,7 +117,7 @@ class Montana extends Component {
             access to it
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['MGN/Guide.png'], 'onePage', 1)}>
+            <u onClick={() => popupHandler(['MGN/Guide.png'], 'turn')}>
               Ruby River Fishing Guide
             </u>
             <br />
@@ -124,7 +125,10 @@ class Montana extends Component {
             points, and challenges to recreation on the river
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['MGN/Case-1.png', 'MGN/Case-2.png', 'MGN/Case-3.png', 'MGN/Case-4.png', 'MGN/Case-5.png', 'MGN/Case-6.png'], 'nPages', 6)}>
+            <u onClick={() => popupHandler(['MGN/Case-1.png', 'MGN/Case-2.png',
+                                            'MGN/Case-3.png', 'MGN/Case-4.png',
+                                            'MGN/Case-5.png', 'MGN/Case-6.png'],
+                                            'turn')}>
               Active Montana Supreme Court Case
             </u>
             <br />
@@ -135,7 +139,7 @@ class Montana extends Component {
         <p>
           After reading all the available materials, if you want a hint
           read&nbsp;
-          <u onClick={() => popupHandler(['MGN/Guardian.png'], 'onePage', 1)}>
+          <u onClick={() => popupHandler(['MGN/Guardian.png'], 'turn')}>
             this additional material
           </u>
           . Please note that the Hint material would
@@ -241,7 +245,6 @@ class Montana extends Component {
 
     var popup = <Popup
                   material={material}
-                  numPages={numPages}
                   type={popupType}
                 />
 

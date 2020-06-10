@@ -8,16 +8,14 @@ const withPopup = WrappedComponent => {
       super(props)
       this.state = {
         material: ['MGN/Missoulian.png'],
-        popupType: 'onePage',
-        numPages: 1
+        popupType: 'turn'
       }
     }
 
-    popupHandler = (newMaterial, newPopupType, newNumPages) => {
+    popupHandler = (newMaterial, newPopupType) => {
       this.setState({
         material: newMaterial,
-        popupType: newPopupType,
-        numPages: newNumPages
+        popupType: newPopupType
       })
       document.getElementsByClassName("main-body")[0].style.display = "none"
       document.getElementsByClassName("popup")[0].style.display = "block"
@@ -26,7 +24,6 @@ const withPopup = WrappedComponent => {
     render() {
       return <WrappedComponent
                material={this.state.material}
-               numPages={this.state.numPages}
                popupType={this.state.popupType}
                popupHandler={this.popupHandler}
                {... this.props}
