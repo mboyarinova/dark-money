@@ -70,7 +70,7 @@ class Montana extends Component {
       <div className="main-text">
         <ul>
           <li className="material-item">
-            <u onClick={() => popupHandler(['MGN/Missoulian.png'], 'turn')}>
+            <u onClick={() => popupHandler(['MGN/Missoulian.jpg'], 'turn')}>
               The Missoulian Article: “Missoula Lawyer Ed Sheehy to run for
               Montana Supreme Court Justice”
             </u>
@@ -78,8 +78,8 @@ class Montana extends Component {
             Article providing background on Ed Sheehy when he ran for the seat
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['MGN/ProFlier-1.png',
-                                            'MGN/ProFlier-2.png'], 'flip')}>
+            <u onClick={() => popupHandler(['MGN/ProFlier-1.jpg',
+                                            'MGN/ProFlier-2.jpg'], 'flip')}>
               Pro-Laurie McKinnon Flier
             </u>
             <br />
@@ -92,15 +92,15 @@ class Montana extends Component {
             </div>
             <u
               style={{float: "left"}}
-              onClick={() => popupHandler(['MGN/AntiFlier_1.png',
-                                           'MGN/AntiFlier_2.png'], 'flip')}
+              onClick={() => popupHandler(['MGN/AntiFlier_1.jpg',
+                                           'MGN/AntiFlier_2.jpg'], 'flip')}
             >
               first
             </u>
             &nbsp;and&nbsp;
             <u
-              onClick={() => popupHandler(['MGN/AntiFlier_3.png',
-                                            'MGN/AntiFlier_4.png'], 'flip')}
+              onClick={() => popupHandler(['MGN/AntiFlier_3.jpg',
+                                            'MGN/AntiFlier_4.jpg'], 'flip')}
             >
               second
             </u>
@@ -110,7 +110,7 @@ class Montana extends Component {
             against Ed Sheehy
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['MGN/Billings.png'], 'turn')}>
+            <u onClick={() => popupHandler(['MGN/Billings.jpg'], 'turn')}>
               Billings Gazette Article: “Radio Ad Attacks Court Candidate
               Sheehy”
             </u>
@@ -119,12 +119,12 @@ class Montana extends Component {
             Montana Growth Network
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['MGN/Website.png'], 'turn')}>
+            <u onClick={() => popupHandler(['MGN/Website.jpg'], 'turn')}>
               Montana Growth Network website
             </u>
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['MGN/Map.png'], 'turn')}>
+            <u onClick={() => popupHandler(['MGN/Map.jpg'], 'turn')}>
               Map of Ruby River and Bridges
             </u>
             <br />
@@ -132,7 +132,7 @@ class Montana extends Component {
             access to it
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['MGN/Guide.png'], 'turn')}>
+            <u onClick={() => popupHandler(['MGN/Guide.jpg'], 'turn')}>
               Ruby River Fishing Guide
             </u>
             <br />
@@ -154,7 +154,7 @@ class Montana extends Component {
         <p>
           After reading all the available materials, if you want a hint
           read&nbsp;
-          <u onClick={() => popupHandler(['MGN/Guardian.png'], 'turn')}>
+          <u onClick={() => popupHandler(['MGN/Guardian.jpg'], 'turn')}>
             this additional material
           </u>
           . Please note that the Hint material would

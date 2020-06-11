@@ -7,7 +7,7 @@ const withPopup = WrappedComponent => {
     constructor(props) {
       super(props)
       this.state = {
-        material: ['MGN/Missoulian.png'],
+        material: ['MGN/Missoulian.jpg'],
         popupType: 'turn'
       }
     }

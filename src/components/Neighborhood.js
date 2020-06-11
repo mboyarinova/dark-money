@@ -62,14 +62,14 @@ class Neighborhood extends Component {
       <div className="main-text">
         <ul>
           <li className="material-item">
-            <u onClick={() => popupHandler(['NEC/About.png'], 'turn')}>
+            <u onClick={() => popupHandler(['NEC/About.jpg'], 'turn')}>
               About Mountain View City
             </u>
             <br />
             Description of Mountain View from the local government website
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['NEC/Guide.png'], 'turn')}>
+            <u onClick={() => popupHandler(['NEC/Guide.jpg'], 'turn')}>
               Mountain View Voice article: “Voter Guide: City Council”
             </u>
             <br />
@@ -86,7 +86,7 @@ class Neighborhood extends Component {
             providing affordable housing
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['NEC/Pat-1.png', 'NEC/Pat-2.png'],
+            <u onClick={() => popupHandler(['NEC/Pat-1.jpg', 'NEC/Pat-2.jpg'],
                                             'turn')}>
               Pat Showalter website
             </u>
@@ -94,12 +94,12 @@ class Neighborhood extends Component {
             About section from Pat Showalter’s campaign website
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['NEC/Map.png'], 'turn')}>
+            <u onClick={() => popupHandler(['NEC/Map.jpg'], 'turn')}>
               Mountain View City Map
             </u>
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['NEC/Website-1.png',
+            <u onClick={() => popupHandler(['NEC/Website-1.jpg',
                                             'NEC/Website-2.png'], 'turn')}>
               Neighborhood Empowerment Coalition website
             </u>
@@ -107,7 +107,7 @@ class Neighborhood extends Component {
             NEC priorities list from their website
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['NEC/Flier.png'], 'turn')}>
+            <u onClick={() => popupHandler(['NEC/Flier.jpg'], 'turn')}>
               Pat Showalter Flier
             </u>
             <br />
