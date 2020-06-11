@@ -16,6 +16,7 @@ class Popup extends Component {
       currentPage: 0
     })
     document.getElementsByClassName("popup")[0].style.display = "none"
+    this.props.unmountMe()
     document.getElementsByClassName("main-body")[0].style.display = "block"
   }
 

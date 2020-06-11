@@ -7,9 +7,15 @@ const withPopup = WrappedComponent => {
     constructor(props) {
       super(props)
       this.state = {
-        material: ['MGN/Missoulian.jpg'],
+        material: ['blank.jpg'],
         popupType: 'turn'
       }
+    }
+
+    handlePopupUnmount = () => {
+      this.setState({
+        material: ['blank.jpg']
+      })
     }
 
     popupHandler = (newMaterial, newPopupType) => {
@@ -26,6 +32,7 @@ const withPopup = WrappedComponent => {
                material={this.state.material}
                popupType={this.state.popupType}
                popupHandler={this.popupHandler}
+               unmountMe={this.handlePopupUnmount}
                {... this.props}
              />
     }

@@ -8,7 +8,7 @@ class Neighborhood extends Component {
 
   render() {
 
-    const {material, popupType, popupHandler} = this.props
+    const {material, popupType, popupHandler, unmountMe} = this.props
 
     var intro =
       <div className="main-text">
@@ -211,6 +211,7 @@ class Neighborhood extends Component {
     var popup = <Popup
                   material={material}
                   type={popupType}
+                  unmountMe={unmountMe}
                 />
 
     return (
