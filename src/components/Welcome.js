@@ -13,12 +13,14 @@ class Welcome extends Component {
         </p>
         <button
           onClick={() => this.props.action("rules")}
+          onKeyPress={() => this.props.action("rules")}
           style={{top: "40%", right: "20%"}}
         >
           Game Rules
         </button>
         <button
           onClick={() => this.props.action("cases")}
+          onKeyPress={() => this.props.action("cases")}
           style={{top: "63%", right: "20%"}}
         >
           Play

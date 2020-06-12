@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import Scenario from './Scenario'
-import InputHandler from './InputHandler'
 import Popup from './Popup'
-import withPopup from './withPopup'
+import withPopupAndForm from './withPopupAndForm'
 
 class Neighborhood extends Component {
 
   render() {
 
-    const {material, popupType, popupHandler, unmountMe} = this.props
+    const {material, popupType, popupHandler, unmountMe, handleClick,
+           handleClickAway, handleSubmit} = this.props
 
     var intro =
       <div className="main-text">
@@ -62,14 +62,22 @@ class Neighborhood extends Component {
       <div className="main-text">
         <ul>
           <li className="material-item">
-            <u onClick={() => popupHandler(['NEC/About.jpg'], 'turn')}>
+            <u
+              onClick={() => popupHandler(['NEC/About.jpg'], 'turn')}
+              onKeyPress={() => popupHandler(['NEC/About.jpg'], 'turn')}
+              tabIndex="0"
+            >
               About Mountain View City
             </u>
             <br />
             Description of Mountain View from the local government website
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['NEC/Guide.jpg'], 'turn')}>
+            <u
+              onClick={() => popupHandler(['NEC/Guide.jpg'], 'turn')}
+              onKeyPress={() => popupHandler(['NEC/Guide.jpg'], 'turn')}
+              tabIndex="0"
+            >
               Mountain View Voice article: “Voter Guide: City Council”
             </u>
             <br />
@@ -77,7 +85,11 @@ class Neighborhood extends Component {
             preserve affordable housing
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['NEC/Candidates.png'], 'turn')}>
+            <u
+              onClick={() => popupHandler(['NEC/Candidates.png'], 'turn')}
+              onKeyPress={() => popupHandler(['NEC/Candidates.png'], 'turn')}
+              tabIndex="0"
+            >
               Mountain View Voice article: “Candidates Challenged on ‘Rent
               Stabilization’”
             </u>
@@ -86,28 +98,46 @@ class Neighborhood extends Component {
             providing affordable housing
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['NEC/Pat-1.jpg', 'NEC/Pat-2.jpg'],
-                                            'turn')}>
+            <u
+              onClick={() => popupHandler(['NEC/Pat-1.jpg', 'NEC/Pat-2.jpg'],
+                                            'turn')}
+              onKeyPress={() => popupHandler(['NEC/Pat-1.jpg', 'NEC/Pat-2.jpg'],
+                                              'turn')}
+              tabIndex="0"
+            >
               Pat Showalter website
             </u>
             <br />
             About section from Pat Showalter’s campaign website
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['NEC/Map.jpg'], 'turn')}>
+            <u
+              onClick={() => popupHandler(['NEC/Map.jpg'], 'turn')}
+              onKeyPress={() => popupHandler(['NEC/Map.jpg'], 'turn')}
+              tabIndex="0"
+            >
               Mountain View City Map
             </u>
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['NEC/Website-1.jpg',
-                                            'NEC/Website-2.png'], 'turn')}>
+            <u
+              onClick={() => popupHandler(['NEC/Website-1.jpg',
+                                            'NEC/Website-2.png'], 'turn')}
+              onKeyPress={() => popupHandler(['NEC/Website-1.jpg',
+                                              'NEC/Website-2.png'], 'turn')}
+              tabIndex="0"
+            >
               Neighborhood Empowerment Coalition website
             </u>
             <br />
             NEC priorities list from their website
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['NEC/Flier.jpg'], 'turn')}>
+            <u
+              onClick={() => popupHandler(['NEC/Flier.jpg'], 'turn')}
+              onKeyPress={() => popupHandler(['NEC/Flier.jpg'], 'turn')}
+              tabIndex="0"
+            >
               Pat Showalter Flier
             </u>
             <br />
@@ -117,48 +147,57 @@ class Neighborhood extends Component {
       </div>
 
     var solutionChoices =
-      <div className="main-text">
-        <p>
-          The special interest that funneled campaign spending through the NEC
-          to affect the outcome of the Mountain View City Council was:
-        </p>
-        <br />
-        <p>
-          <input
-            type="radio"
-            name="solution"
-            onClick={() => InputHandler(0)}
-          />
-          A coalition of landlords who wanted to make sure rent control was not
-          implemented in Mountain View.
-        </p>
-        <p className="option" style={{color: "green"}}>
-          You are correct! Click button below to see the complete solution.
-        </p>
-        <p>
-          <input
-            type="radio"
-            name="solution"
-            onClick={() => InputHandler(1)}
-          />
-          An environmentalist group who wanted green solutions to Mountain
-          View’s housing problem.
-        </p>
-        <p className="option" style={{color: "red"}}>
-          This is not the correct answer. Try again or read the solution.
-        </p>
-        <p>
-          <input
-            type="radio"
-            name="solution"
-            onClick={() => InputHandler(2)}
-          />
-          A large tech company who wanted a new housing development so that
-          their employees’ rent was less expensive.
-        </p>
-        <p className="option" style={{color: "red"}}>
-          This is not the correct answer. Try again or read the solution.
-        </p>
+      <div className="main-text options">
+        <form onSubmit={handleSubmit}>
+          <p>
+            The special interest that funneled campaign spending through the
+            NEC to affect the outcome of the Mountain View City Council was:
+          </p>
+          <br />
+          <label>
+            <input
+              type="radio"
+              name="solution"
+              value="0"
+              onClick={handleClick}
+              onKeyPress={handleClick}
+            />
+            A coalition of landlords who wanted to make sure rent control was
+            not implemented in Mountain View.
+          </label>
+          <p className="option" style={{color: "green"}}>
+            You are correct! Click button below to see the complete solution.
+          </p>
+          <label>
+            <input
+              type="radio"
+              name="solution"
+              value="1"
+              onClick={handleClick}
+              onKeyPress={handleClick}
+            />
+            An environmentalist group who wanted green solutions to Mountain
+            View’s housing problem.
+          </label>
+          <p className="option" style={{color: "red"}}>
+            This is not the correct answer. Try again or read the solution.
+          </p>
+          <label>
+            <input
+              type="radio"
+              name="solution"
+              value="2"
+              onClick={handleClick}
+              onKeyPress={handleClick}
+            />
+            A large tech company who wanted a new housing development so that
+            their employees’ rent was less expensive.
+          </label>
+          <p className="option" style={{color: "red"}}>
+            This is not the correct answer. Try again or read the solution.
+          </p>
+          <input className="submit" type="submit" value="Check Your Answer" />
+        </form>
       </div>
 
     var solution =
@@ -224,10 +263,11 @@ class Neighborhood extends Component {
           solutionChoices={solutionChoices}
           solution={solution}
           action={this.props.action}
+          handleClickAway={handleClickAway}
         />
       </React.Fragment>
     )
   }
 }
 
-export default withPopup(Neighborhood)
+export default withPopupAndForm(Neighborhood)

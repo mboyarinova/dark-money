@@ -8,13 +8,27 @@ class SolutionChoices extends Component {
           {this.props.text}
         </div>
         <button
-          onClick={() => this.props.action("voter-materials")}
+          onClick={() => {
+            this.props.action("voter-materials")
+            this.props.handleClickAway()
+          }}
+          onKeyPress={() => {
+            this.props.action("voter-materials")
+            this.props.handleClickAway()
+          }}
           style={{top: "88%", left: "15%"}}
         >
           Review Materials Again
         </button>
         <button
-          onClick={() => this.props.action("solution")}
+          onClick={() => {
+            this.props.action("solution")
+            this.props.handleClickAway()
+          }}
+          onKeyPress={() => {
+            this.props.action("solution")
+            this.props.handleClickAway()
+          }}
           style={{top: "88%", right: "15%"}}
         >
           Read Solution

@@ -11,16 +11,18 @@ class FactSheet extends Component {
           <div
             className="prev"
             onClick={() => this.props.action("intro")}
+            onKeyPress={() => this.props.action("intro")}
+            tabIndex="0"
           >
-            &#10094;
-            <div className="label">Introduction</div>
+            &#10094; <br/> Introduction
           </div>
           <div
             className="next"
             onClick={() => this.props.action("voter-materials")}
+            onKeyPress={() => this.props.action("voter-materials")}
+            tabIndex="0"
           >
-            &#10095;
-            <div className="label">Voter Materials</div>
+            &#10095; <br/> Voter Materials
           </div>
       </div>
       </div>

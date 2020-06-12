@@ -48,7 +48,9 @@ class Scenario extends Component {
       case "solution-choices":
         page = <SolutionChoices
                   text={this.props.solutionChoices}
-                  action={this.pageHandler} />
+                  action={this.pageHandler} 
+                  handleClickAway={this.props.handleClickAway}
+               />
         break
       case "solution":
         page = <Solution

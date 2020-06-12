@@ -10,9 +10,23 @@ class Rules extends Component {
     var ruleText
     var playButton = null
     var prevButton =
-      <div className="prev" onClick={() => plusSlides(-1)}>&#10094;</div>
+      <div
+        className="prev"
+        onClick={() => plusSlides(-1)}
+        onKeyPress={() => plusSlides(-1)}
+        tabIndex="0"
+      >
+        &#10094;
+      </div>
     var nextButton =
-      <div className="next" onClick={() => plusSlides(1)}>&#10095;</div>
+      <div
+        className="next"
+        onClick={() => plusSlides(1)}
+        onKeyPress={() => plusSlides(1)}
+        tabIndex="0"
+      >
+        &#10095;
+      </div>
 
     switch(slideIndex) {
       case 0:
@@ -96,6 +110,7 @@ class Rules extends Component {
         playButton =
           <button
             onClick={() => this.props.action("cases")}
+            onKeyPress={() => this.props.action("cases")}
             style={{top: "88%", right: "15%"}}
           >
             Play
@@ -115,15 +130,31 @@ class Rules extends Component {
         </div>
         <button
           onClick={() => this.props.action("welcome")}
+          onKeyPress={() => this.props.action("welcome")}
           style={{top: "88%", left: "15%"}}
         >
           Main Page
         </button>
         {playButton}
         <div className="carousel-dots">
-          <span className="dot active" onClick={() => currentSlide(0)}></span>
-          <span className="dot" onClick={() => currentSlide(1)}></span>
-          <span className="dot" onClick={() => currentSlide(2)}></span>
+          <span
+            className="dot active"
+            onClick={() => currentSlide(0)}
+            onKeyPress={() => currentSlide(0)}
+            tabIndex="0"
+          />
+          <span
+            className="dot"
+            onClick={() => currentSlide(1)}
+            onKeyPress={() => currentSlide(1)}
+            tabIndex="0"
+          />
+          <span
+            className="dot"
+            onClick={() => currentSlide(2)}
+            onKeyPress={() => currentSlide(2)}
+            tabIndex="0"
+          />
         </div>
       </div>
     )

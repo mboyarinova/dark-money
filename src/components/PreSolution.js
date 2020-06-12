@@ -10,6 +10,7 @@ class PreSolution extends Component {
         <button
           className="stack-button"
           onClick={() => this.props.action("voter-materials")}
+          onKeyPress={() => this.props.action("voter-materials")}
           style={{top: "48%"}}
         >
           Review Materials Again
@@ -17,6 +18,7 @@ class PreSolution extends Component {
         <button
           className="stack-button"
           onClick={() => this.props.action("solution-choices")}
+          onKeyPress={() => this.props.action("solution-choices")}
           style={{top: "60%"}}
         >
           See Possible Solutions
@@ -24,6 +26,7 @@ class PreSolution extends Component {
         <button
           className="stack-button"
           onClick={() => this.props.action("solution")}
+          onKeyPress={() => this.props.action("solution")}
           style={{top: "72%"}}
         >
           Read Solution

@@ -11,13 +11,16 @@ class VoterMaterials extends Component {
           <div
             className="prev"
             onClick={() => this.props.action("fact-sheet")}
+            onKeyPress={() => this.props.action("fact-sheet")}
+            tabIndex="0"
           >
-            &#10094;
-            <div className="label">Fact Sheet</div>
+            &#10094; <br/> Fact Sheet
           </div>
           <div
             className="next"
             onClick={() => this.props.action("pre-solution")}
+            onKeyPress={() => this.props.action("pre-solution")}
+            tabIndex="0"
           >
             &#10095;
           </div>

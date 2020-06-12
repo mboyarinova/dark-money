@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import Scenario from './Scenario'
-import InputHandler from './InputHandler'
 import Popup from './Popup'
-import withPopup from './withPopup'
+import withPopupAndForm from './withPopupAndForm'
 
 class Montana extends Component {
 
   render() {
 
-    const {material, popupType, popupHandler, unmountMe} = this.props
+    const {material, popupType, popupHandler, unmountMe, handleClick,
+           handleClickAway, handleSubmit} = this.props
 
     var intro =
       <div className="main-text">
@@ -70,7 +70,11 @@ class Montana extends Component {
       <div className="main-text">
         <ul>
           <li className="material-item">
-            <u onClick={() => popupHandler(['MGN/Missoulian.jpg'], 'turn')}>
+            <u
+              onClick={() => popupHandler(['MGN/Missoulian.jpg'], 'turn')}
+              onKeyPress={() => popupHandler(['MGN/Missoulian.jpg'], 'turn')}
+              tabIndex="0"
+            >
               The Missoulian Article: “Missoula Lawyer Ed Sheehy to run for
               Montana Supreme Court Justice”
             </u>
@@ -78,8 +82,13 @@ class Montana extends Component {
             Article providing background on Ed Sheehy when he ran for the seat
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['MGN/ProFlier-1.jpg',
-                                            'MGN/ProFlier-2.jpg'], 'flip')}>
+            <u
+              onClick={() => popupHandler(['MGN/ProFlier-1.jpg',
+                                            'MGN/ProFlier-2.jpg'], 'flip')}
+              onKeyPress={() => popupHandler(['MGN/ProFlier-1.jpg',
+                                              'MGN/ProFlier-2.jpg'], 'flip')}
+              tabIndex="0"
+            >
               Pro-Laurie McKinnon Flier
             </u>
             <br />
@@ -94,6 +103,9 @@ class Montana extends Component {
               style={{float: "left"}}
               onClick={() => popupHandler(['MGN/AntiFlier_1.jpg',
                                            'MGN/AntiFlier_2.jpg'], 'flip')}
+              onKeyPress={() => popupHandler(['MGN/AntiFlier_1.jpg',
+                                              'MGN/AntiFlier_2.jpg'], 'flip')}
+              tabIndex="0"
             >
               first
             </u>
@@ -101,6 +113,9 @@ class Montana extends Component {
             <u
               onClick={() => popupHandler(['MGN/AntiFlier_3.jpg',
                                             'MGN/AntiFlier_4.jpg'], 'flip')}
+              onKeyPress={() => popupHandler(['MGN/AntiFlier_3.jpg',
+                                              'MGN/AntiFlier_4.jpg'], 'flip')}
+              tabIndex="0"
             >
               second
             </u>
@@ -110,7 +125,11 @@ class Montana extends Component {
             against Ed Sheehy
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['MGN/Billings.jpg'], 'turn')}>
+            <u
+              onClick={() => popupHandler(['MGN/Billings.jpg'], 'turn')}
+              onKeyPress={() => popupHandler(['MGN/Billings.jpg'], 'turn')}
+              tabIndex="0"
+            >
               Billings Gazette Article: “Radio Ad Attacks Court Candidate
               Sheehy”
             </u>
@@ -119,12 +138,20 @@ class Montana extends Component {
             Montana Growth Network
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['MGN/Website.jpg'], 'turn')}>
+            <u
+              onClick={() => popupHandler(['MGN/Website.jpg'], 'turn')}
+              onKeyPress={() => popupHandler(['MGN/Website.jpg'], 'turn')}
+              tabIndex="0"
+            >
               Montana Growth Network website
             </u>
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['MGN/Map.jpg'], 'turn')}>
+            <u
+              onClick={() => popupHandler(['MGN/Map.jpg'], 'turn')}
+              onKeyPress={() => popupHandler(['MGN/Map.jpg'], 'turn')}
+              tabIndex="0"
+            >
               Map of Ruby River and Bridges
             </u>
             <br />
@@ -132,7 +159,11 @@ class Montana extends Component {
             access to it
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['MGN/Guide.jpg'], 'turn')}>
+            <u
+              onClick={() => popupHandler(['MGN/Guide.jpg'], 'turn')}
+              onKeyPress={() => popupHandler(['MGN/Guide.jpg'], 'turn')}
+              tabIndex="0"
+            >
               Ruby River Fishing Guide
             </u>
             <br />
@@ -140,10 +171,18 @@ class Montana extends Component {
             points, and challenges to recreation on the river
           </li>
           <li className="material-item">
-            <u onClick={() => popupHandler(['MGN/Case-1.png', 'MGN/Case-2.png',
-                                            'MGN/Case-3.png', 'MGN/Case-4.png',
-                                            'MGN/Case-5.png', 'MGN/Case-6.png'],
-                                            'turn')}>
+            <u
+              onClick={() => popupHandler(['MGN/Case-1.png', 'MGN/Case-2.png',
+                                           'MGN/Case-3.png', 'MGN/Case-4.png',
+                                           'MGN/Case-5.png', 'MGN/Case-6.png'],
+                                           'turn')}
+              onKeyPress={() => popupHandler(
+                                  ['MGN/Case-1.png', 'MGN/Case-2.png',
+                                   'MGN/Case-3.png', 'MGN/Case-4.png',
+                                   'MGN/Case-5.png', 'MGN/Case-6.png'],
+                                   'turn')}
+              tabIndex="0"
+            >
               Active Montana Supreme Court Case
             </u>
             <br />
@@ -154,7 +193,11 @@ class Montana extends Component {
         <p>
           After reading all the available materials, if you want a hint
           read&nbsp;
-          <u onClick={() => popupHandler(['MGN/Guardian.jpg'], 'turn')}>
+          <u
+            onClick={() => popupHandler(['MGN/Guardian.jpg'], 'turn')}
+            onKeyPress={() => popupHandler(['MGN/Guardian.jpg'], 'turn')}
+            tabIndex="0"
+          >
             this additional material
           </u>
           . Please note that the Hint material would
@@ -163,50 +206,60 @@ class Montana extends Component {
       </div>
 
     var solutionChoices =
-      <div className="main-text">
-        <p>
-          Hundreds of thousands of dollars of dark money were poured into the
-          Montana Supreme Court election because:
-        </p>
-        <br />
-        <p>
-          <input
-            type="radio"
-            name="solution"
-            onClick={() => InputHandler(0)}
-          />
-          A conservative group was angry that Ed Sheehy defended the Christmas
-          Day Killer, and was concerned he will abolish the death penalty if he
-          gets onto the Supreme Court.
-        </p>
-        <p className="option" style={{color: "red"}}>
-          This is not the correct answer. Try again or read the solution.
-        </p>
-        <p>
-          <input
-            type="radio"
-            name="solution"
-            onClick={() => InputHandler(1)}
-          />
-          Private landowners wanted to get rid of the Stream Access Law, and
-          they thought a more conservative judge was more likely to side with
-          them.
-        </p>
-        <p className="option" style={{color: "green"}}>
-          You are correct! Click button below to see the complete solution.
-        </p>
-        <p>
-          <input
-            type="radio"
-            name="solution"
-            onClick={() => InputHandler(2)}
-          />
-          Coal and oil companies wanted to limit the public’s access to rivers
-          so that they could increase their energy outputs in those areas.
-        </p>
-        <p className="option" style={{color: "red"}}>
-          This is not the correct answer. Try again or read the solution.
-        </p>
+      <div className="main-text options">
+        <form onSubmit={handleSubmit}>
+          <p>
+            Hundreds of thousands of dollars of dark money were poured into the
+            Montana Supreme Court election because:
+          </p>
+          <br />
+          <label>
+            <input
+              type="radio"
+              name="solution"
+              value="0"
+              onClick={handleClick}
+              onKeyPress={handleClick}
+            />
+            A conservative group was angry that Ed Sheehy defended the
+            Christmas Day Killer, and was concerned he will abolish the death
+            penalty if he gets onto the Supreme Court.
+          </label>
+          <p className="option" style={{color: "red"}}>
+            This is not the correct answer. Try again or read the solution.
+          </p>
+          <label>
+            <input
+              type="radio"
+              name="solution"
+              value="1"
+              onClick={handleClick}
+              onKeyPress={handleClick}
+            />
+            Private landowners wanted to get rid of the Stream Access Law, and
+            they thought a more conservative judge was more likely to side with
+            them.
+          </label>
+          <p className="option" style={{color: "green"}}>
+            You are correct! Click button below to see the complete solution.
+          </p>
+          <label>
+            <input
+              type="radio"
+              name="solution"
+              value="2"
+              onClick={handleClick}
+              onKeyPress={handleClick}
+            />
+            Coal and oil companies wanted to limit the public’s access to
+            rivers so that they could increase their energy outputs in those
+            areas.
+          </label>
+          <p className="option" style={{color: "red"}}>
+            This is not the correct answer. Try again or read the solution.
+          </p>
+          <input className="submit" type="submit" value="Check Your Answer" />
+        </form>
       </div>
 
     var solution =
@@ -274,10 +327,11 @@ class Montana extends Component {
           solutionChoices={solutionChoices}
           solution={solution}
           action={this.props.action}
+          handleClickAway={handleClickAway}
         />
       </React.Fragment>
     )
   }
 }
 
-export default withPopup(Montana)
+export default withPopupAndForm(Montana)

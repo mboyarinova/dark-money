@@ -11,16 +11,18 @@ class Intro extends Component {
           <div
             className="prev"
             onClick={() => this.props.back("cases")}
+            onKeyDown={() => this.props.back("cases")}
+            tabIndex="0"
           >
-            &#10094;
-            <div className="label">Cases</div>
+            &#10094; <br /> Cases
           </div>
           <div
             className="next"
             onClick={() => this.props.action("fact-sheet")}
+            onKeyDown={() => this.props.action("fact-sheet")}
+            tabIndex="0"
           >
-            &#10095;
-            <div className="label">Fact Sheet</div>
+            &#10095; <br/> Fact Sheet
           </div>
         </div>
       </div>

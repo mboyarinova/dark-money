@@ -52,6 +52,7 @@ class Popup extends Component {
             <button
               className="flip-button"
               onClick={this.handleFlip}
+              onKeyPress={this.handleFlip}
             >
               <div className="rotate">
                 &#8635;
@@ -63,11 +64,21 @@ class Popup extends Component {
       case 'turn':
 
         var prevButton =
-          <div className="prev" onClick={() => this.plusSlides(-1)}>
+          <div
+            className="prev"
+            onClick={() => this.plusSlides(-1)}
+            onKeyPress={() => this.plusSlides(-1)}
+            tabIndex="0"
+          >
             &#10094;
           </div>
         var nextButton =
-          <div className="next" onClick={() => this.plusSlides(1)}>
+          <div
+            className="next"
+            onClick={() => this.plusSlides(1)}
+            onKeyPress={() => this.plusSlides(1)}
+            tabIndex="0"
+          >
             &#10095;
           </div>
 
@@ -104,6 +115,7 @@ class Popup extends Component {
         <button
           className="close-button"
           onClick={this.handleClose}
+          onKeyDown={this.handleClose}
         >
         &times;
         </button>

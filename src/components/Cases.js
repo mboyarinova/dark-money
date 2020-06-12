@@ -13,18 +13,21 @@ class Cases extends Component {
         </p>
         <button
           onClick={() => this.props.action("montana-case")}
+          onKeyPress={() => this.props.action("montana-case")}
           style={{top: "38%", right: "20%"}}
         >
           Montana Growth Network
         </button>
         <button
           onClick={() => this.props.action("neighborhood-case")}
+          onKeyPress={() => this.props.action("neighborhood-case")}
           style={{top: "61%", right: "20%"}}
         >
           Neighborhood Empowerment Coalition
         </button>
         <button
           onClick={() => this.props.action("rules")}
+          onKeyPress={() => this.props.action("rules")}
           style={{top: "83%", left: "15%"}}
         >
           Game Rules
