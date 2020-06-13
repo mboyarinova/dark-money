@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Measure from 'react-measure'
 
 class Popup extends Component {
 
@@ -6,7 +7,8 @@ class Popup extends Component {
     super(props)
     this.state = {
       flipped: false,
-      currentPage: 0
+      currentPage: 0,
+      imgHeight: 0
     }
   }
 
@@ -16,8 +18,8 @@ class Popup extends Component {
       currentPage: 0
     })
     document.getElementsByClassName("popup")[0].style.display = "none"
-    this.props.unmountMe()
     document.getElementsByClassName("main-body")[0].style.display = "block"
+    this.props.unmountMe()
   }
 
   handleFlip = () => {
@@ -32,11 +34,13 @@ class Popup extends Component {
     })
   }
 
-  showTooltip = () => {
-
-  }
-
-  hideTooltip = () => {
+  handleResize = contentRect => {
+    var obj = contentRect.entry
+    if (obj) {
+      this.setState({
+        imgHeight: obj.height
+      })
+    }
 
   }
 
@@ -73,16 +77,17 @@ class Popup extends Component {
 
         var terms = null
         var page = this.state.currentPage
+        var style = {
+          height: this.state.imgHeight
+        }
 
         if (this.props.material[page] === 'MGN/Case-1.png') {
-          //var height = document.getElementsByClassName("popup-img")[0].height
-          //console.log(getComputedStyle(document.getElementsByClassName("popup-img")[0]).height)
+
           terms =
-            <div className="terms">
+            <div className="terms" style={style}>
               <div
                 className="tooltip"
-                style={{left:"30.5%", top:"25.8%",
-                        width: "9.5%", height: "2%"}}
+                style={{left:"30.5%", top:"25.8%", width: "9.5%"}}
               >
                 <span className="tooltiptext">
                   a person who makes a formal application to a court for a
@@ -91,8 +96,7 @@ class Popup extends Component {
               </div>
               <div
                 className="tooltip"
-                style={{left:"43.8%", top:"25.8%",
-                        width: "9.5%", height: "2%"}}
+                style={{left:"43.8%", top:"25.8%", width: "9.5%"}}
               >
                 <span className="tooltiptext">
                   a person who applies to a higher court for a reversal of the
@@ -101,8 +105,7 @@ class Popup extends Component {
               </div>
               <div
                 className="tooltip"
-                style={{left:"30.5%", top:"46.2%",
-                        width: "12%", height: "2%"}}
+                style={{left:"30.5%", top:"46.2%", width: "12%"}}
               >
                 <span className="tooltiptext">
                   persons sued or accused in a court of law
@@ -110,8 +113,7 @@ class Popup extends Component {
               </div>
               <div
                 className="tooltip"
-                style={{left:"46.5%", top:"46.2%",
-                        width: "9.5%", height: "2%"}}
+                style={{left:"46.5%", top:"46.2%", width: "9.5%"}}
               >
                 <span className="tooltiptext">
                   respondents in a case appealed to a higher court
@@ -119,8 +121,7 @@ class Popup extends Component {
               </div>
               <div
                 className="tooltip"
-                style={{left:"30.5%", top:"56.3%",
-                        width: "20.5%", height: "2%"}}
+                style={{left:"30.5%", top:"56.3%", width: "20.5%"}}
               >
                 <span className="tooltiptext">
                   individuals who make themselves part of a lawsuit by uniting
@@ -131,11 +132,10 @@ class Popup extends Component {
 
         } else if (this.props.material[page] === 'MGN/Case-2.png') {
           terms =
-            <div className="terms">
+            <div className="terms" style={style}>
               <div
                 className="tooltip"
-                style={{left:"46.5%", top:"25.5%",
-                        width: "9%", height: "2%"}}
+                style={{left:"46.5%", top:"25.5%", width: "9%"}}
               >
                 <span className="tooltiptext">
                   a right to cross or otherwise use someone else’s land for a
@@ -174,12 +174,15 @@ class Popup extends Component {
         material =
           <div className="popup-material">
             <div className="temp">
-              <img
-                className="popup-img"
-                alt=""
-                src={require("./materials/" +
-                      this.props.material[page])}
-              />
+              <Measure onResize={this.handleResize}>
+                {({contentRect, measureRef}) =>
+                  <img ref={measureRef}
+                    className="popup-img"
+                    alt=""
+                    src={require("./materials/" +
+                         this.props.material[page])}
+                  />}
+              </Measure>
             {terms}
             </div>
             {prevButton}
