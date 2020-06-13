@@ -12,7 +12,7 @@ class App extends Component {
     super(props)
 
     this.state = {
-      page: "montana-case"
+      page: "welcome"
     }
   }
 
