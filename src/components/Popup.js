@@ -32,6 +32,14 @@ class Popup extends Component {
     })
   }
 
+  showTooltip = () => {
+
+  }
+
+  hideTooltip = () => {
+
+  }
+
   render() {
 
     var material
@@ -63,6 +71,80 @@ class Popup extends Component {
 
       case 'turn':
 
+        var terms = null
+        var page = this.state.currentPage
+
+        if (this.props.material[page] === 'MGN/Case-1.png') {
+          //var height = document.getElementsByClassName("popup-img")[0].height
+          //console.log(getComputedStyle(document.getElementsByClassName("popup-img")[0]).height)
+          terms =
+            <div className="terms">
+              <div
+                className="tooltip"
+                style={{left:"30.5%", top:"25.8%",
+                        width: "9.5%", height: "2%"}}
+              >
+                <span className="tooltiptext">
+                  a person who makes a formal application to a court for a
+                  judicial action
+                </span>
+              </div>
+              <div
+                className="tooltip"
+                style={{left:"43.8%", top:"25.8%",
+                        width: "9.5%", height: "2%"}}
+              >
+                <span className="tooltiptext">
+                  a person who applies to a higher court for a reversal of the
+                  decision of a lower court
+                </span>
+              </div>
+              <div
+                className="tooltip"
+                style={{left:"30.5%", top:"46.2%",
+                        width: "12%", height: "2%"}}
+              >
+                <span className="tooltiptext">
+                  persons sued or accused in a court of law
+                </span>
+              </div>
+              <div
+                className="tooltip"
+                style={{left:"46.5%", top:"46.2%",
+                        width: "9.5%", height: "2%"}}
+              >
+                <span className="tooltiptext">
+                  respondents in a case appealed to a higher court
+                </span>
+              </div>
+              <div
+                className="tooltip"
+                style={{left:"30.5%", top:"56.3%",
+                        width: "20.5%", height: "2%"}}
+              >
+                <span className="tooltiptext">
+                  individuals who make themselves part of a lawsuit by uniting
+                  with the defendant
+                </span>
+              </div>
+            </div>
+
+        } else if (this.props.material[page] === 'MGN/Case-2.png') {
+          terms =
+            <div className="terms">
+              <div
+                className="tooltip"
+                style={{left:"46.5%", top:"25.5%",
+                        width: "9%", height: "2%"}}
+              >
+                <span className="tooltiptext">
+                  a right to cross or otherwise use someone else’s land for a
+                  specified purpose
+                </span>
+              </div>
+            </div>
+        }
+
         var prevButton =
           <div
             className="prev"
@@ -82,8 +164,6 @@ class Popup extends Component {
             &#10095;
           </div>
 
-        var page = this.state.currentPage
-
         if (page === 0) {
           prevButton = null
         }
@@ -98,8 +178,9 @@ class Popup extends Component {
                 className="popup-img"
                 alt=""
                 src={require("./materials/" +
-                      this.props.material[this.state.currentPage])}
+                      this.props.material[page])}
               />
+            {terms}
             </div>
             {prevButton}
             {nextButton}
