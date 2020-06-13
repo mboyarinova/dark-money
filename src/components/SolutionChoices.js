@@ -16,7 +16,7 @@ class SolutionChoices extends Component {
             this.props.action("voter-materials")
             this.props.handleClickAway()
           }}
-          style={{top: "88%", left: "15%"}}
+          style={{top: "86%", left: "15%"}}
         >
           Review Materials Again
         </button>
@@ -29,7 +29,7 @@ class SolutionChoices extends Component {
             this.props.action("solution")
             this.props.handleClickAway()
           }}
-          style={{top: "88%", right: "15%"}}
+          style={{top: "86%", right: "15%"}}
         >
           Read Solution
         </button>

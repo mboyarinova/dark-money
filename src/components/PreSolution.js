@@ -4,7 +4,9 @@ class PreSolution extends Component {
   render() {
     return (
       <div className="page" id="pre-solution">
-        <h2 style={{position: "absolute", top: "30%", width: "100%"}}>
+        <h2
+          style={{position: "absolute", top: "30%", width: "100%", fontSize: "5vh"}}
+        >
           Where do you think the funding is coming from?
         </h2>
         <button
@@ -19,7 +21,7 @@ class PreSolution extends Component {
           className="stack-button"
           onClick={() => this.props.action("solution-choices")}
           onKeyPress={() => this.props.action("solution-choices")}
-          style={{top: "60%"}}
+          style={{top: "62%"}}
         >
           See Possible Solutions
         </button>
@@ -27,7 +29,7 @@ class PreSolution extends Component {
           className="stack-button"
           onClick={() => this.props.action("solution")}
           onKeyPress={() => this.props.action("solution")}
-          style={{top: "72%"}}
+          style={{top: "76%"}}
         >
           Read Solution
         </button>
