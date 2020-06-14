@@ -41,7 +41,6 @@ class Popup extends Component {
         imgHeight: obj.height
       })
     }
-
   }
 
   render() {
@@ -131,18 +130,18 @@ class Popup extends Component {
             </div>
 
         } else if (this.props.material[page] === 'MGN/Case-2.png') {
-          terms =
-            <div className="terms" style={style}>
-              <div
-                className="tooltip"
-                style={{left:"46.5%", top:"25.5%", width: "9%"}}
-              >
-                <span className="tooltiptext">
-                  a right to cross or otherwise use someone else’s land for a
-                  specified purpose
-                </span>
+            terms =
+              <div className="terms" style={style}>
+                <div
+                  className="tooltip"
+                  style={{left:"46.5%", top:"25.5%", width: "9%"}}
+                >
+                  <span className="tooltiptext">
+                    a right to cross or otherwise use someone else’s land for a
+                    specified purpose
+                  </span>
+                </div>
               </div>
-            </div>
         }
 
         var prevButton =
@@ -173,17 +172,14 @@ class Popup extends Component {
 
         material =
           <div className="popup-material">
-            <div className="temp">
+            <div className="img-container">
               <Measure onResize={this.handleResize}>
                 {({contentRect, measureRef}) =>
-                  <img ref={measureRef}
-                    className="popup-img"
-                    alt=""
-                    src={require("./materials/" +
-                         this.props.material[page])}
+                  <img ref={measureRef} className="popup-img" alt=""
+                    src={require("./materials/" + this.props.material[page])}
                   />}
               </Measure>
-            {terms}
+              {terms}
             </div>
             {prevButton}
             {nextButton}
@@ -199,7 +195,7 @@ class Popup extends Component {
         <button
           className="close-button"
           onClick={this.handleClose}
-          onKeyDown={this.handleClose}
+          onKeyPress={this.handleClose}
         >
         &times;
         </button>

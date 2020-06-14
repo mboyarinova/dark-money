@@ -4,9 +4,8 @@ class PreSolution extends Component {
   render() {
     return (
       <div className="page" id="pre-solution">
-        <h2
-          style={{position: "absolute", top: "30%", width: "100%", fontSize: "5vh"}}
-        >
+        <h2 style={{position: "absolute", top: "30%",
+                    width: "100%", fontSize: "5vh"}}>
           Where do you think the funding is coming from?
         </h2>
         <button

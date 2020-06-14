@@ -11,7 +11,7 @@ class Intro extends Component {
           <div
             className="prev"
             onClick={() => this.props.back("cases")}
-            onKeyDown={() => this.props.back("cases")}
+            onKeyPress={() => this.props.back("cases")}
             tabIndex="0"
           >
             &#10094; <br /> Cases
@@ -19,7 +19,7 @@ class Intro extends Component {
           <div
             className="next"
             onClick={() => this.props.action("fact-sheet")}
-            onKeyDown={() => this.props.action("fact-sheet")}
+            onKeyPress={() => this.props.action("fact-sheet")}
             tabIndex="0"
           >
             &#10095; <br/> Fact Sheet

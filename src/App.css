@@ -222,7 +222,7 @@ input[type=radio] {
   width: 100%;
 }
 
-.temp {
+.img-container {
   display: inline-block;
   height: 100%;
   overflow-x: hidden;

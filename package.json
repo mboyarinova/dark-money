@@ -1,7 +1,7 @@
 {
   "name": "react-app",
   "version": "0.1.0",
-  "homepage": "https://dark-money-game.herokuapp.com/",
+  "homepage": "https://dark-money.herokuapp.com/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
