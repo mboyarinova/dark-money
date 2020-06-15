@@ -5,6 +5,7 @@ import Cases from './components/Cases'
 import Montana from './components/Montana'
 import Neighborhood from './components/Neighborhood'
 import './App.css'
+import logo from './logo.png'
 
 class App extends Component {
 
@@ -42,7 +43,12 @@ class App extends Component {
       default:
         break
     }
-    return <div className="App">{page}</div>
+    return (
+      <div className="App">
+        <img className="logo" alt="" src={logo} />
+        {page}
+      </div>
+    )
   }
 }
 
