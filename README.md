@@ -6,7 +6,7 @@ A React.js app created for the [Alliance of Citizen Engagement](https://ace-usa.
 
 ## About
 
-The purpose of this game is to show voters in the United States the way that special interests can become involved in local elections, and how our current campaign finance system works. [Siena Frost](https://ace-usa.org/?page_id=101) came up with the concept of the game and created the content, and I designed and developed the web interface.
+The purpose of this game is to show voters in the United States the way that special interests can become involved in local elections, and how our current campaign finance system works. [Siena Frost](https://ace-usa.org/?page_id=101) came up with the concept of the game and created the content, I designed and developed the web interface, and Aidan Gnoth designed the game logo.
 
 ## Technology
 
