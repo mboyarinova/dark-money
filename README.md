@@ -14,7 +14,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Setup
 
-To view this project, install it locally using npm:
+To view this project, install it locally in the project directory using npm:
 
 ```
 npm install
